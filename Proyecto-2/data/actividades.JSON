@@ -1,0 +1,269 @@
+[
+    {
+        "descripcion": "No afecta la nota",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "Encuesta ingreso",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 13:11:17 COT 2024",
+        "tipoActividad": "Encuesta",
+        "objetivo": "Identificar fortalezas del curso",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 5,
+        "preguntas": [
+            "Que es la geografia",
+            "Nombre 5 capitales de Europa"
+        ],
+        "id": "594c3b48-c915-4e44-be93-b28b9e00a268",
+        "nivel": "bajo"
+    },
+    {
+        "descripcion": "dificil",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "Examen prueba",
+        "obligatorio": false,
+        "prerrequisitos": [{
+            "descripcion": "No afecta la nota",
+            "rating": 0,
+            "cantidadRating": 0,
+            "titulo": "Encuesta ingreso",
+            "obligatorio": true,
+            "prerrequisitos": [],
+            "tiempoLimite": "Tue Nov 19 13:11:17 COT 2024",
+            "tipoActividad": "Encuesta",
+            "objetivo": "Identificar fortalezas del curso",
+            "respuestas": {},
+            "resenas": [],
+            "duracionMinutos": 5,
+            "preguntas": [
+                "Que es la geografia",
+                "Nombre 5 capitales de Europa"
+            ],
+            "id": "594c3b48-c915-4e44-be93-b28b9e00a268",
+            "nivel": "bajo"
+        }],
+        "tiempoLimite": "Tue Nov 19 13:40:41 COT 2024",
+        "tipoActividad": "Examen",
+        "objetivo": "No se",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 10,
+        "preguntas": ["Esta triste?"],
+        "id": "b85e2921-7353-4ac4-be28-c405c7c197c0",
+        "nivel": "avanzado"
+    },
+    {
+        "descripcion": "Hola",
+        "calificacionMinima": 80,
+        "respuestasCorrectas": [
+            "D",
+            "D",
+            "D",
+            "D",
+            "D"
+        ],
+        "rating": 3.6666667,
+        "cantidadRating": 3,
+        "titulo": "Capitales",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 13:52:23 COT 2024",
+        "tipoActividad": "Quiz",
+        "objetivo": "Capitales del mundo",
+        "respuestasEstudiantes": {},
+        "resenas": [
+            "El mejor quiz que ha existido",
+            "Mal redactado"
+        ],
+        "duracionMinutos": 10,
+        "preguntas": {
+            "Capital Venezuela": {
+                "A": {"Merida": "NO"},
+                "B": {"Caracas": "AJa"},
+                "C": {"Cucuta": "Casi"},
+                "D": {"Maracaibo": "Mansion en maracaibo"}
+            },
+            "Capital de Argentina": {
+                "A": {"Malos aires": "siempre malos"},
+                "B": {"medios aires": "medio medio"},
+                "C": {"Bogota": "en serio?"},
+                "D": {"Buenos Aires": "Correcto"}
+            },
+            "Capital de Colombia": {
+                "A": {"Bogota": "Es la correcta"},
+                "B": {"Medellin": "Es la capital de antioquia"},
+                "C": {"Cali": "Ois no"},
+                "D": {"Barranquilla": "Aja pahdre"}
+            },
+            "Capital USA": {
+                "A": {"Miami": "No"},
+                "B": {"Orlando": "Parques"},
+                "C": {"Washington": "Casa blanca"},
+                "D": {"NY": "hola"}
+            },
+            "Capital Spain": {
+                "A": {"Pain": "Siempre"},
+                "B": {"Barcelona": "Neverland"},
+                "C": {"Andorra": "YT"},
+                "D": {"Madrid": "Hala Madrid"}
+            }
+        },
+        "id": "018b9a37-ee7e-4568-a51a-61b3be7d9e74",
+        "nivel": "intermedio"
+    },
+    {
+        "descripcion": "No afecta la nota",
+        "rating": 4,
+        "cantidadRating": 3,
+        "titulo": "Encuesta ingreso",
+        "obligatorio": false,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 20:37:09 COT 2024",
+        "tipoActividad": "Encuesta",
+        "objetivo": "Identificar fortalezas del curso",
+        "respuestas": {"Gaby": [
+            "Una ciencia social",
+            "cr7"
+        ]},
+        "resenas": ["Meh, no me mato"],
+        "duracionMinutos": 5,
+        "preguntas": [
+            "Que es la geografia",
+            "Nombre 5 capitales de Europa"
+        ],
+        "id": "9408875b-72de-40d4-b336-2a6d0ef563b4",
+        "nivel": "bajo"
+    },
+    {
+        "descripcion": "fsdf",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "prueba recurso",
+        "obligatorio": false,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 22:10:58 COT 2024",
+        "tipoActividad": "Recurso",
+        "objetivo": "no",
+        "material": "google.com",
+        "resenas": [],
+        "duracionMinutos": 7,
+        "id": "b48892e7-f946-44c9-9f31-711b623a11cb",
+        "nivel": "medio"
+    },
+    {
+        "descripcion": "siii",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "tarea prueba",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 22:11:31 COT 2024",
+        "tipoActividad": "Tarea",
+        "objetivo": "nooo",
+        "idActividadRealizar": "b85e2921-7353-4ac4-be28-c405c7c197c0",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 10,
+        "id": "aa5d88f0-562e-493c-ab56-ff981274fb94",
+        "nivel": "bajo"
+    },
+    {
+        "descripcion": "Quiz sobre geografia de colombia",
+        "calificacionMinima": 75,
+        "rating": 4.6,
+        "cantidadRating": 1,
+        "titulo": "Quiz verdadero falso Geografia 1",
+        "obligatorio": true,
+        "prerrequisitos": [{
+            "descripcion": "fsdf",
+            "rating": 0,
+            "cantidadRating": 0,
+            "titulo": "prueba recurso",
+            "obligatorio": false,
+            "prerrequisitos": [],
+            "tiempoLimite": "Tue Nov 19 22:10:58 COT 2024",
+            "tipoActividad": "Recurso",
+            "objetivo": "no",
+            "material": "google.com",
+            "resenas": [],
+            "duracionMinutos": 7,
+            "id": "b48892e7-f946-44c9-9f31-711b623a11cb",
+            "nivel": "medio"
+        }],
+        "tiempoLimite": "Wed Nov 20 00:33:10 COT 2024",
+        "tipoActividad": "QuizVerdad",
+        "objetivo": "Aprender",
+        "respuestas": [
+            "Verdadero",
+            "Falso"
+        ],
+        "respuestasEstudiantes": {"Male": [
+            "Verdadero",
+            "Falso"
+        ]},
+        "resenas": ["fuerte, dificil pero divertido"],
+        "duracionMinutos": 9,
+        "preguntas": [
+            "Es Medellin la capital de Antioquia?",
+            "Es Chia la capital de Cundinamarca?"
+        ],
+        "id": "064c2345-0bfe-438d-8c09-34a6f5c7aed9",
+        "nivel": "intermedio"
+    },
+    {
+        "descripcion": "dificil",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "Examen prueba",
+        "obligatorio": false,
+        "prerrequisitos": [{
+            "descripcion": "No afecta la nota",
+            "rating": 0,
+            "cantidadRating": 0,
+            "titulo": "Encuesta ingreso",
+            "obligatorio": true,
+            "prerrequisitos": [],
+            "tiempoLimite": "Tue Nov 19 13:11:17 COT 2024",
+            "tipoActividad": "Encuesta",
+            "objetivo": "Identificar fortalezas del curso",
+            "respuestas": {},
+            "resenas": [],
+            "duracionMinutos": 5,
+            "preguntas": [
+                "Que es la geografia",
+                "Nombre 5 capitales de Europa"
+            ],
+            "id": "594c3b48-c915-4e44-be93-b28b9e00a268",
+            "nivel": "bajo"
+        }],
+        "tiempoLimite": "Tue Nov 19 13:40:41 COT 2024",
+        "tipoActividad": "Examen",
+        "objetivo": "No se",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 10,
+        "preguntas": ["Esta triste?"],
+        "id": "c5996463-8bbf-44da-a33f-5819f9168068",
+        "nivel": "avanzado"
+    },
+    {
+        "descripcion": "siii",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "tarea prueba",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Tue Nov 19 22:11:31 COT 2024",
+        "tipoActividad": "Tarea",
+        "objetivo": "nooo",
+        "idActividadRealizar": "b85e2921-7353-4ac4-be28-c405c7c197c0",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 10,
+        "id": "18ffeec4-95a6-414f-9da7-0479e955e2a7",
+        "nivel": "bajo"
+    }
+]
