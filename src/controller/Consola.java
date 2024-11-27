@@ -1457,6 +1457,7 @@ public class Consola {
 		// Tengo que cargar todos los datos. Se hace desde los parametros statics.
 		String tituloConsola = "Bienvenido al Sistema Operativo de LearningPaths G11!";
 		int opcionSeleccionada = 0;
+		System.out.println("HOLA");
 		
 		while (true) {
 		try {
