@@ -1,2 +1,5 @@
-/module-info.class
-/pruebas/
+/bin/
+/bin
+/.settings
+/.classpath
+/.project
