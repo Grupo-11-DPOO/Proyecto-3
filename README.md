@@ -1,4 +1,4 @@
-Este es el **proyecto 2** para la clase de diseño y programación orientada a objetos de la Universidad de los Andes.
+Este es el **proyecto 3** para la clase de diseño y programación orientada a objetos de la Universidad de los Andes.
 
 **Sección 8:** Iván Salazar 
 
