@@ -27,5 +27,11 @@
             "8ef30894-c55e-4f01-8ad5-efc81526ae36",
             "4cd37215-501f-42de-834a-afd385bbe990"
         ]
+    },
+    {
+        "passWord": "1234",
+        "login": "hola",
+        "idActividadesCreadas": [],
+        "idLearningPathsCreados": []
     }
 ]
