@@ -28,11 +28,11 @@ import usuarios.Profesor;
 
 public class Consola {
 	
-	public static SistemaRegistro sistemaRegistro = new SistemaRegistro();
-	private static HashMap<String, Profesor> datosProfesor = sistemaRegistro.getDatosProfesores();
-	private static HashMap<String, Estudiante> datosEstudiante = sistemaRegistro.getDatosEstudiantes();
-	public static HashMap<String, Actividad> actividades = sistemaRegistro.actividades;
-	public static HashMap<String, LearningPath> learningPaths = sistemaRegistro.learningPaths;
+	public static SistemaRegistro sistemaRegistro;
+	private static HashMap<String, Profesor> datosProfesor;
+	private static HashMap<String, Estudiante> datosEstudiante;
+	public static HashMap<String, Actividad> actividades;
+	public static HashMap<String, LearningPath> learningPaths;
 	private static Profesor profesorActual;
 	private static Estudiante estudianteActual;
 	private static String[] opciones = {"Iniciar sesión", "Registrarse", "Salir"};
@@ -1454,6 +1454,13 @@ public class Consola {
     }
     	
 	public static void main(String[] args)  {		
+		
+		sistemaRegistro = new SistemaRegistro();
+		datosProfesor = sistemaRegistro.getDatosProfesores();
+		datosEstudiante = sistemaRegistro.getDatosEstudiantes();
+		actividades = sistemaRegistro.actividades;
+		learningPaths = sistemaRegistro.learningPaths;
+		
 		// Tengo que cargar todos los datos. Se hace desde los parametros statics.
 		String tituloConsola = "Bienvenido al Sistema Operativo de LearningPaths G11!";
 		int opcionSeleccionada = 0;
