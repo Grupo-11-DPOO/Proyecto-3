@@ -42,5 +42,18 @@
         ],
         "registroLearningPaths": {},
         "idActividadEnCurso": "064c2345-0bfe-438d-8c09-34a6f5c7aed9"
+    },
+    {
+        "passWord": "HAMBRE",
+        "registroActividades": {},
+        "idLearningPathEnCurso": "",
+        "login": "ESTUDI",
+        "intereses": [
+            "1",
+            "2",
+            "43"
+        ],
+        "registroLearningPaths": {},
+        "idActividadEnCurso": ""
     }
 ]

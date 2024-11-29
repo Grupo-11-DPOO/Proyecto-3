@@ -38,11 +38,11 @@ public class PanelBotones extends JPanel implements ActionListener{
         String comando = e.getActionCommand( );
         if( comando.equals( INICIAR ) )
         {
-           ventanaPrincipal.mostrarVentanaIniciarSesion( );
+           ventanaPrincipal.iniciarSesion( );
         }
         else if( comando.equals( REGISTRARSE ) )
         {
-            ventanaPrincipal.mostrarVentanaRegistrarse( );
+            ventanaPrincipal.escogerTipoUsuario( );
         }
     }
 	
