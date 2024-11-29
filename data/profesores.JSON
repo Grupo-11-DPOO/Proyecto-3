@@ -29,14 +29,8 @@
         ]
     },
     {
-        "passWord": "1234",
+        "passWord": "prueba",
         "login": "hola",
-        "idActividadesCreadas": [],
-        "idLearningPathsCreados": []
-    },
-    {
-        "passWord": "NO",
-        "login": "PRUEBA",
         "idActividadesCreadas": [],
         "idLearningPathsCreados": []
     }

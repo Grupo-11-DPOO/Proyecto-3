@@ -5,11 +5,11 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
-public class VentanaRegistroEstudiantes extends JFrame{
+public class VentanaRegistroEstudiante extends JFrame{
 	
 	private VentanaPrincipal ventanaPrincipal;
 	
-	public VentanaRegistroEstudiantes(VentanaPrincipal ventanaPrincipal) {
+	public VentanaRegistroEstudiante(VentanaPrincipal ventanaPrincipal) {
 		
 		this.ventanaPrincipal = ventanaPrincipal;
 		
@@ -18,8 +18,8 @@ public class VentanaRegistroEstudiantes extends JFrame{
 		
 		
         // Termina de configurar la ventana
-        setTitle( "Registro Profesores" );
-        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setTitle( "Registro Estudiantes" );
+        setDefaultCloseOperation( DISPOSE_ON_CLOSE );
         setSize( 400, 600 );
         setResizable(false);
         setLocationRelativeTo( null );

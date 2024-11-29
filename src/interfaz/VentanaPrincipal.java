@@ -28,8 +28,9 @@ public class VentanaPrincipal extends JFrame {
 	public static HashMap<String, Actividad> actividades;
 	public static HashMap<String, LearningPath> learningPaths;
 	
-	private VentanaRegistroProfesores ventanaRegistroProfesores;
-	private VentanaRegistroEstudiantes ventanaRegistroEstudiantes;
+	private VentanaRegistroProfesor ventanaRegistroProfesores;
+	private VentanaRegistroEstudiante ventanaRegistroEstudiantes;
+	private VentanaMenuProfesor ventanaMenuProfesor;
 	
 	private PanelIngreso pIngreso;
 	private PanelBotones pBotones;
@@ -80,7 +81,10 @@ public class VentanaPrincipal extends JFrame {
 				if (sistemaRegistro.iniciarSesionProfesor(login, password)) {
 					// Menu profesor
 					// TODO Ventana profesor
-					System.out.println("ENTRA VENTANA PROFESOR");
+					Profesor profesor = datosProfesor.get(login);
+					mostrarVentanaMenuProfesor(profesor);
+					this.dispose();
+					
 				} else {
 					// Datos incorrectos
 					JOptionPane.showMessageDialog(this, "Su login y/o contraseña son incorrectos.", "Credenciales incorrectos", JOptionPane.OK_OPTION);
@@ -114,16 +118,14 @@ public class VentanaPrincipal extends JFrame {
 		
 		switch (seleccion) {
 	    case 0:
-	        System.out.println("Seleccionó Profesor");
+	        mostrarVentanaRegistroProfesores();
 	        break;
 	    case 1:
-	        System.out.println("Seleccionó Estudiante");
+	        mostrarVentanaRegistroEstudiantes();
 	        break;
 	    case 2:
-	        System.out.println("Seleccionó Volver");
 	        break;
 	    default:
-	        System.out.println("No seleccionó ninguna opción");
 	        break;
 		}
 	}
@@ -132,21 +134,28 @@ public class VentanaPrincipal extends JFrame {
     {
         if( ventanaRegistroProfesores== null || !ventanaRegistroProfesores.isVisible( ) )
         {
-        	ventanaRegistroProfesores = new VentanaRegistroProfesores( this );
+        	ventanaRegistroProfesores = new VentanaRegistroProfesor( this );
         	ventanaRegistroProfesores.setVisible( true );
         }
 	}
+    
     
     public void mostrarVentanaRegistroEstudiantes( )
     {
     	if( ventanaRegistroEstudiantes== null || !ventanaRegistroEstudiantes.isVisible( ) )
     	{
-    		ventanaRegistroEstudiantes = new VentanaRegistroEstudiantes( this );
+    		ventanaRegistroEstudiantes = new VentanaRegistroEstudiante( this );
     		ventanaRegistroEstudiantes.setVisible( true );
     	}
     }
 
-	
+	public void mostrarVentanaMenuProfesor(Profesor profesor) {
+    	if( ventanaMenuProfesor== null || !ventanaMenuProfesor.isVisible( ) )
+    	{
+    		ventanaMenuProfesor = new VentanaMenuProfesor( profesor );
+    		ventanaMenuProfesor.setVisible( true );
+    	}
+	}
 
     /**
      * Inicia la aplicación
