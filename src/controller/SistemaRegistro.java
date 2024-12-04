@@ -1,5 +1,6 @@
 package controller;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -147,5 +148,29 @@ public class SistemaRegistro {
 
 	public void setDatosEstudiantes(HashMap<String, Estudiante> datosEstudiantes) {
 		this.datosEstudiantes = datosEstudiantes;
+	}
+	
+	public List<Actividad> getActividadesPropiasProfesor(Profesor profesor) {
+		List<Actividad> listaActividadesPropias = new ArrayList<Actividad>();
+		List<String> idActividadesPropias = profesor.getIdActividadesCreadas();
+		for (String idActividad: idActividadesPropias) {
+			Actividad actividad = actividades.get(idActividad);
+			if (actividad != null) {
+				listaActividadesPropias.add(actividad);
+			}
+		}
+		return listaActividadesPropias;
+	}
+	
+	public List<LearningPath> getLearningPathsPropiosProfesor(Profesor profesor) {
+		List<LearningPath> listaLearningPathsPropios = new ArrayList<LearningPath>();
+		List<String> idLearningPathsPropios = profesor.getIdLearningPathsCreados();
+		for (String idLearningPath: idLearningPathsPropios) {
+			LearningPath learningPath = learningPaths.get(idLearningPath);
+			if (learningPath != null) {
+				listaLearningPathsPropios.add(learningPath);
+			}
+		}
+		return listaLearningPathsPropios;
 	}
 }

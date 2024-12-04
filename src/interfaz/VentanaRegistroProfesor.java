@@ -22,11 +22,9 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
 	private JPasswordField txtPassword;
 	private JButton confirmar;
 	private static final String REGISTRAR = "Registrar";
-	private VentanaPrincipal ventanaPrincipal;
 	
-	public VentanaRegistroProfesor(VentanaPrincipal ventanaPrincipal) {
+	public VentanaRegistroProfesor() {
 		
-		this.ventanaPrincipal = ventanaPrincipal;
 		
 		setLayout(new GridLayout(3, 2));
 
@@ -65,7 +63,6 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
 		return login;
 	}
 	
-	@SuppressWarnings("deprecation")
 	public String getPassword() {
 		String password = txtPassword.getText();
 		return password;

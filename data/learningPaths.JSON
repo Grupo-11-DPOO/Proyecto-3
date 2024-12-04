@@ -68,5 +68,80 @@
         ],
         "nivel": "avanzado",
         "version": 13
+    },
+    {
+        "descripcion": "no es secreto",
+        "fechaModificacion": "2024-12-03T18:13:25.799569",
+        "rating": 0,
+        "titulo": "HOLI PRUEBA GUI",
+        "fechaCreacion": "2024-12-03T18:13:25.799569",
+        "duracion": 0,
+        "id": "7a5349c9-aa19-4d30-be65-ab7a90041e40",
+        "actividades": [],
+        "nivel": "Intermedio",
+        "version": 1
+    },
+    {
+        "descripcion": "123",
+        "fechaModificacion": "2024-12-03T18:24:07.313381400",
+        "rating": 0,
+        "titulo": "Learni 1",
+        "fechaCreacion": "2024-12-03T18:24:07.313381400",
+        "duracion": 0,
+        "id": "645aabb1-a1fa-45e6-b3dc-924fc31d0774",
+        "actividades": [],
+        "nivel": "Bajo",
+        "version": 1
+    },
+    {
+        "descripcion": "VURIOSO",
+        "fechaModificacion": "2024-12-03T19:14:02.909490400",
+        "rating": 0,
+        "titulo": "PRUEBA RESENAS",
+        "fechaCreacion": "2024-12-03T19:14:02.909490400",
+        "duracion": 0,
+        "id": "a8a11787-cbbd-456c-a698-522a872d0b7d",
+        "actividades": [],
+        "nivel": "Intermedio",
+        "version": 1
+    },
+    {
+        "descripcion": "kgftghc",
+        "fechaModificacion": "2024-12-03T19:24:33.343514",
+        "rating": 0,
+        "titulo": "hvyjh",
+        "fechaCreacion": "2024-12-03T19:24:33.343514",
+        "duracion": 0,
+        "id": "5eed4d6a-0e07-4349-ad92-e2362d5d1128",
+        "actividades": [],
+        "nivel": "Bajo",
+        "version": 1
+    },
+    {
+        "descripcion": "grgr",
+        "fechaModificacion": "2024-12-03T19:27:08.453038300",
+        "rating": 0,
+        "titulo": "grgr",
+        "fechaCreacion": "2024-12-03T19:27:08.453038300",
+        "duracion": 0,
+        "id": "d8e7d1f2-0238-4143-afb9-3b045ffe7a06",
+        "actividades": [],
+        "nivel": "Bajo",
+        "version": 1
+    },
+    {
+        "descripcion": "fesfees",
+        "fechaModificacion": "2024-12-03T19:34:36.382296800",
+        "rating": 2.299999952316284,
+        "titulo": "la 23454 es la vencida",
+        "fechaCreacion": "2024-12-03T19:34:05.995783200",
+        "duracion": 16,
+        "id": "4ec87dc1-056b-4bac-8185-f845d407e13e",
+        "actividades": [
+            "b48892e7-f946-44c9-9f31-711b623a11cb",
+            "064c2345-0bfe-438d-8c09-34a6f5c7aed9"
+        ],
+        "nivel": "Avanzado",
+        "version": 5
     }
 ]

@@ -40,13 +40,12 @@ public class VentanaPrincipal extends JFrame {
 		
 		setLayout( new BorderLayout( ) );
 		
-		
 		// Panel nombre de app
-		JTextPane paneTitulo = new JTextPane();
-		paneTitulo.setText("Bienvenido al Sistema Operativo de Learning Paths!");
+		JLabel labelTitulo = new JLabel();
+		labelTitulo.setText("Bienvenido al Sistema Operativo de Learning Paths!");
 		
 		// TODO centrar y poner bonito
-        add( paneTitulo, BorderLayout.NORTH );
+        add( labelTitulo, BorderLayout.NORTH );
         
         // TODO tener un panel central
         pIngreso = new PanelIngreso();
@@ -80,7 +79,6 @@ public class VentanaPrincipal extends JFrame {
 			if (pIngreso.getTipoUsuario() == "Profesor") {
 				if (sistemaRegistro.iniciarSesionProfesor(login, password)) {
 					// Menu profesor
-					// TODO Ventana profesor
 					Profesor profesor = datosProfesor.get(login);
 					mostrarVentanaMenuProfesor(profesor);
 					this.dispose();
@@ -125,8 +123,6 @@ public class VentanaPrincipal extends JFrame {
 	        break;
 	    case 2:
 	        break;
-	    default:
-	        break;
 		}
 	}
 	
@@ -134,7 +130,7 @@ public class VentanaPrincipal extends JFrame {
     {
         if( ventanaRegistroProfesores== null || !ventanaRegistroProfesores.isVisible( ) )
         {
-        	ventanaRegistroProfesores = new VentanaRegistroProfesor( this );
+        	ventanaRegistroProfesores = new VentanaRegistroProfesor();
         	ventanaRegistroProfesores.setVisible( true );
         }
 	}
