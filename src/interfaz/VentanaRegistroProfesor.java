@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,13 +27,19 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
 	public VentanaRegistroProfesor() {
 		
 		
-		setLayout(new GridLayout(3, 2));
+		setLayout(null);
 
 		JLabel labelUsuario = new JLabel("Login:");
+		
+		labelUsuario.setBounds(10, 20, 80, 25);
 		txtUsuario = new JTextField();
+		txtUsuario.setBounds(100,20,165,25);
+		
 		
 		JLabel labelPassword = new JLabel("Contraseña:");
+		labelPassword.setBounds(10, 50, 80, 25);
 		txtPassword = new JPasswordField();
+		txtPassword.setBounds(100,50,165,25);
 		
 		add(labelUsuario);
 		add(txtUsuario);
@@ -43,6 +50,7 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
 		// Boton agregar
 		confirmar = new JButton();
 		confirmar.setText("Registrar");
+		confirmar.setBounds(50,90, 165, 25);
 		confirmar.addActionListener(this);
 		confirmar.setActionCommand(REGISTRAR);
 		add(confirmar);
@@ -51,10 +59,11 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
         // Termina de configurar la ventana
         setTitle( "Registro Profesores" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 400, 600 );
+        setSize( 300, 150 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
+        
 		
 	}
 	

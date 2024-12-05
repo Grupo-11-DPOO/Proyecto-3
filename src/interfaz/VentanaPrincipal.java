@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.util.HashMap;
 
@@ -43,16 +44,17 @@ public class VentanaPrincipal extends JFrame {
 		// Panel nombre de app
 		JLabel labelTitulo = new JLabel();
 		labelTitulo.setText("Bienvenido al Sistema Operativo de Learning Paths!");
-		
+		labelTitulo.setBackground(new Color(255,255,255));
 		// TODO centrar y poner bonito
-        add( labelTitulo, BorderLayout.NORTH );
+        add( labelTitulo, BorderLayout.NORTH);
         
         // TODO tener un panel central
         pIngreso = new PanelIngreso();
         add(pIngreso, BorderLayout.CENTER);
-
+        
         // TODO panel de botones iniciar sesion registrarse 
         pBotones = new PanelBotones(this);
+        pBotones.setBackground(new Color(255,255,255));
 
         add(pBotones, BorderLayout.SOUTH);
  
@@ -60,8 +62,9 @@ public class VentanaPrincipal extends JFrame {
 		
         // Termina de configurar la ventana
         setTitle( "Learning Paths G11" );
+        this.setBackground(new Color(255,255,255));
         setDefaultCloseOperation( EXIT_ON_CLOSE );
-        setSize( 400, 600 );
+        setSize( 350, 200 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );

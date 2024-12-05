@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,13 +28,18 @@ public class PanelIngreso extends JPanel implements ActionListener{
 	
 	public PanelIngreso() {
 		
-		setLayout( new GridLayout(3,2));
-		
+		setLayout( null);
+		setBackground(new Color(255,255,255));
 		JLabel labelUsuario = new JLabel("Login:");
+		labelUsuario.setBounds(10, 20, 80, 25);
 		txtUsuario = new JTextField();
+		txtUsuario.setBounds(100,20,215,25);
+		
 		
 		JLabel labelPassword = new JLabel("Contraseña:");
+		labelPassword.setBounds(10, 50, 80, 25);
 		txtPassword = new JPasswordField();
+		txtPassword.setBounds(100,50,215,25);
 		
 		add(labelUsuario);
 		add(txtUsuario);
@@ -52,6 +58,8 @@ public class PanelIngreso extends JPanel implements ActionListener{
         grupoOpciones.add(radioProfesor);
         grupoOpciones.add(radioEstudiante);
         
+        radioProfesor.setBounds(80,80,100,25);
+        radioEstudiante.setBounds(180,80,100,25);
         add(radioProfesor);
         add(radioEstudiante);
 
