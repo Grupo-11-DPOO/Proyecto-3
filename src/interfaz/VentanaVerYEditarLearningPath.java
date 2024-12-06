@@ -156,7 +156,7 @@ public class VentanaVerYEditarLearningPath extends JFrame implements ActionListe
 		if (learningPath != null) {
 			if( ventanaEditarLearningPath== null || !ventanaEditarLearningPath.isVisible( ) )
 	        {
-				ventanaEditarLearningPath = new VentanaEditarLearningPath(this, learningPath);
+				ventanaEditarLearningPath = new VentanaEditarLearningPath(this, learningPath, profesorActual);
 				ventanaEditarLearningPath.setVisible(true);
 				this.dispose();
 	        }

@@ -1,7 +1,7 @@
 [
     {
-        "descripcion": "Nueva descripcion",
-        "fechaModificacion": "2024-11-19T13:39:20.212192800",
+        "descripcion": "Cambio desde GUI",
+        "fechaModificacion": "2024-12-05T22:05:52.516404300",
         "rating": 0,
         "titulo": "Prueba LearningPath",
         "fechaCreacion": "2024-11-19T01:10:45.552681800",
@@ -9,7 +9,7 @@
         "id": "b0541de0-0888-4258-860b-75a9f9a92445",
         "actividades": [],
         "nivel": "avanzado",
-        "version": 4
+        "version": 5
     },
     {
         "descripcion": "Aprender sobre geografia latina",
@@ -71,15 +71,15 @@
     },
     {
         "descripcion": "no es secreto",
-        "fechaModificacion": "2024-12-03T18:13:25.799569",
+        "fechaModificacion": "2024-12-05T22:00:53.744746700",
         "rating": 0,
-        "titulo": "HOLI PRUEBA GUI",
+        "titulo": "Jejej",
         "fechaCreacion": "2024-12-03T18:13:25.799569",
         "duracion": 0,
         "id": "7a5349c9-aa19-4d30-be65-ab7a90041e40",
         "actividades": [],
         "nivel": "Intermedio",
-        "version": 1
+        "version": 2
     },
     {
         "descripcion": "123",
@@ -118,16 +118,16 @@
         "version": 1
     },
     {
-        "descripcion": "grgr",
-        "fechaModificacion": "2024-12-03T19:27:08.453038300",
+        "descripcion": ". califico",
+        "fechaModificacion": "2024-12-05T22:16:09.712488800",
         "rating": 0,
-        "titulo": "grgr",
+        "titulo": "Editar pruebasssssss",
         "fechaCreacion": "2024-12-03T19:27:08.453038300",
-        "duracion": 0,
+        "duracion": 5,
         "id": "d8e7d1f2-0238-4143-afb9-3b045ffe7a06",
-        "actividades": [],
-        "nivel": "Bajo",
-        "version": 1
+        "actividades": ["594c3b48-c915-4e44-be93-b28b9e00a268"],
+        "nivel": "Intermedio",
+        "version": 8
     },
     {
         "descripcion": "fesfees",
@@ -141,6 +141,18 @@
             "b48892e7-f946-44c9-9f31-711b623a11cb",
             "064c2345-0bfe-438d-8c09-34a6f5c7aed9"
         ],
+        "nivel": "Avanzado",
+        "version": 5
+    },
+    {
+        "descripcion": "siii",
+        "fechaModificacion": "2024-12-05T21:59:32.682930600",
+        "rating": 4.599999904632568,
+        "titulo": "EDITADDOOOO",
+        "fechaCreacion": "2024-12-05T17:23:38.954136900",
+        "duracion": 9,
+        "id": "42d68eac-eb87-4a96-a86b-62e6cd2ff361",
+        "actividades": ["064c2345-0bfe-438d-8c09-34a6f5c7aed9"],
         "nivel": "Avanzado",
         "version": 5
     }

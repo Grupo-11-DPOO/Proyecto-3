@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import learningPaths.LearningPath;
+import usuarios.Profesor;
 
 @SuppressWarnings("serial")
 public class VentanaEditarLearningPath extends JFrame implements ActionListener{
@@ -25,11 +26,14 @@ public class VentanaEditarLearningPath extends JFrame implements ActionListener{
 	
 	private VentanaVerYEditarLearningPath ventanaPadre;
 	private LearningPath learningPath;
+	private VentanaAgregarActividadesPropias ventanaAgregarActividadesPropias;
+	private Profesor profesorActual;
 	
-	public VentanaEditarLearningPath (VentanaVerYEditarLearningPath ventanaPadre, LearningPath learningPath) {
+	public VentanaEditarLearningPath (VentanaVerYEditarLearningPath ventanaPadre, LearningPath learningPath, Profesor profesorActual) {
 		
 		setLayout( new BorderLayout());
 		
+		this.profesorActual = profesorActual;
 		this.ventanaPadre = ventanaPadre;
 		this.learningPath = learningPath;
 		String titulo = learningPath.getTitulo();
@@ -67,24 +71,84 @@ public class VentanaEditarLearningPath extends JFrame implements ActionListener{
 		
 	}
 	
+	public void actualizarTitulo() {
+		String nuevoTitulo = JOptionPane.showInputDialog("Ingrese el nuevo título");
+		// Actualizar info
+		learningPath.setTitulo(nuevoTitulo);
+		VentanaPrincipal.sistemaRegistro.guardarLearningPath(learningPath);
+		VentanaPrincipal.sistemaRegistro.cargarProfesores(VentanaPrincipal.actividades, VentanaPrincipal.learningPaths);
+		this.dispose();
+		new VentanaEditarLearningPath(ventanaPadre, learningPath, profesorActual);
+	}
 	
+	public void actualizarDescripcion() {
+		String nuevaDescripcion = JOptionPane.showInputDialog("Ingrese la nueva descripción");
+		// Actualizar info
+		learningPath.setDescripcion(nuevaDescripcion);
+		VentanaPrincipal.sistemaRegistro.guardarLearningPath(learningPath);
+		VentanaPrincipal.sistemaRegistro.cargarProfesores(VentanaPrincipal.actividades, VentanaPrincipal.learningPaths);
+		this.dispose();
+		new VentanaEditarLearningPath(ventanaPadre, learningPath, profesorActual);
+	}
+	
+	public void actualizarNivel() {
+		String[] niveles = {"Bajo", "Intermedio", "Avanzado"};
+        int seleccion = JOptionPane.showOptionDialog(null, "Seleccione un nuevo nivel:", "Opciones de Nivel", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, niveles, niveles[0]);
+        String nivel = null;
+        switch (seleccion) {
+        case 0:
+        	// Bajo
+        	nivel = "Bajo";
+        	break;
+        case 1:
+        	// Intermedio
+        	nivel = "Intermedio";
+        	break;
+        case 2:
+        	// Avanzado
+        	nivel = "Avanzado";
+        	break;
+        }
+        learningPath.setNivel(nivel);
+		VentanaPrincipal.sistemaRegistro.guardarLearningPath(learningPath);
+		VentanaPrincipal.sistemaRegistro.cargarProfesores(VentanaPrincipal.actividades, VentanaPrincipal.learningPaths);
+		this.dispose();
+		new VentanaEditarLearningPath(ventanaPadre, learningPath, profesorActual);
+	}
+	
+	public void agregarActividadExistente() {
+		String cantidadString = JOptionPane.showInputDialog("Ingrese la cantidad de actividades (números enteros):");
+		try {
+            int cantidad = Integer.parseInt(cantidadString);
+            if (cantidad > 0) {
+            	mostrarVentanaAgregarActividadesPropias(cantidad, learningPath);
+            	VentanaPrincipal.sistemaRegistro.guardarLearningPath(learningPath);
+            }
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this,  "Input inválido. Por favor solo ingrese enteros.", "Input error", JOptionPane.ERROR_MESSAGE);
+        }
+	}
+	
+	public void mostrarVentanaAgregarActividadesPropias(int cantidad, LearningPath learningPath) {
+        if( ventanaAgregarActividadesPropias== null || !ventanaAgregarActividadesPropias.isVisible( ) )
+        {
+        	ventanaAgregarActividadesPropias = new VentanaAgregarActividadesPropias(profesorActual, cantidad, learningPath);
+        	ventanaAgregarActividadesPropias.setVisible(true);
+        }
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand( );
-        if( comando.equals( TITULO ) )
-        {
-        	String nuevoTitulo = JOptionPane.showInputDialog("Ingrese el nuevo título");
-        	// actualizar info
+        if( comando.equals(TITULO)) {
+        	actualizarTitulo();
         } else if (comando.equals(DESCRIPCION)) {
-        	String nuevaDescripcion = JOptionPane.showInputDialog("Ingrese la nueva descripción");
-        	// actualizar info
+        	actualizarDescripcion();
         } else if (comando.equals(NIVEL)) {
-        	// String nuevoNivel = JOptionPane.showInputDialog("Ingrese la nueva descripción");
-        	// Debe ser de la opcion existente.
-        	// actualizar info
+        	actualizarNivel();
         } else if (comando.equals(ACTIVIDAD)) {
-        	
+        	agregarActividadExistente();
         }
 	}
 
