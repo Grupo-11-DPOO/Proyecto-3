@@ -29,10 +29,10 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREARACTIVIDAD = "Crear Actividad";
-	private static final String VERYEDITARACTI = "Ver y Editar Actividad";
+	private static final String VERYEDITARACTI = "Ver y Editar Actividades";
 	private static final String CLONAR = "Clonar una Actividad";
-	private static final String AGREGAR = "Agregar una reseña o rating";
-	private static final String VERSTATS = "Ver estadisticas";
+	private static final String AGREGAR = "Agregar reseñas y/o rating a actividad";
+	private static final String VERSTATS = "Ver estadísticas";
 	private static final String SALIR = "Salir";
 	public VentanaMenuProfesor(Profesor profesorActual) {
 		
@@ -118,7 +118,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	ventanaVerYEditarLearningPath.setVisible( true );
         }
 	}
-
+	//TODO terminar de instanciar las otras ventanas
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand( );
@@ -128,6 +129,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         } else if (comando.equals(VERYDITAR)) {
         	verYEditarLearningPath();
         }
+        //TODO terminar de configurar las otras ventanas
 	}
 	
 	
