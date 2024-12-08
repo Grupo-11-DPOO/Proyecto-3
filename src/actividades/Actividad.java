@@ -200,7 +200,6 @@ public abstract class Actividad implements Identificable, Cloneable {
         return false;
     }
     
-    // Se clona la actividad por si un profesor desea poder ser el nuevo dueño y modificarla.
 	public void agregarPrerrequisito(Actividad actividad) {
 		this.prerequisitos.add(actividad);
 	}

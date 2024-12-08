@@ -19,7 +19,6 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private JButton botonMenuCrearLearningPath;
 	private JButton botonMenuVerYEditarLearningPath;
 	private JButton botonCrearActividad;
-	private JButton botonMenuCrearActividad;
 	private JButton botonMenuClonarActividad;
 	private JButton botonMenuVerYEditarActividad;
 	private JButton botonMenuAgregar;
@@ -139,6 +138,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	verYEditarLearningPath();
         } else if (comando.equals(CREAR_ACTIVIDAD)) {
         	crearActividad();
+        } else if (comando.equals(SALIR)) {
+        	this.dispose();
         }
         //TODO terminar de configurar las otras ventanas
 	}
