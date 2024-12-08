@@ -1,8 +1,10 @@
 package interfaz;
 
-public class VentanaVerOfertaLearningPath {
+import javax.swing.JFrame;
 
-	public VentanaVerOfertaLearningPath() {
+public class VentanaVerOfertaLearningPath extends JFrame{
+
+	public VentanaVerOfertaLearningPath(){
 		// TODO Auto-generated constructor stub
 	}
 

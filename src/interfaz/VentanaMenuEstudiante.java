@@ -122,7 +122,7 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	
 	public void verProgreso() {
 		if(ventanaVerProgreso == null||!ventanaVerProgreso.isVisible()) {
-			ventanaVerProgreso = new VentanaVerProgresoLP();
+			ventanaVerProgreso = new VentanaVerProgresoLP(estudianteActual);
 			ventanaVerProgreso.setVisible(true);
 		}
 	}
