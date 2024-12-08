@@ -56,7 +56,7 @@ public class VentanaAgregarActividadesPropias extends JFrame implements ActionLi
         // Termina de configurar la ventana
         setTitle( "Agregar actividad propia a LearningPath" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 800, 900 );
+        setSize( 800, 500 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );

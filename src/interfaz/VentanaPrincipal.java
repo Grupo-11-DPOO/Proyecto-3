@@ -84,7 +84,7 @@ public class VentanaPrincipal extends JFrame {
 					// Menu profesor
 					Profesor profesor = datosProfesor.get(login);
 					mostrarVentanaMenuProfesor(profesor);
-					this.dispose();
+					
 					
 				} else {
 					// Datos incorrectos

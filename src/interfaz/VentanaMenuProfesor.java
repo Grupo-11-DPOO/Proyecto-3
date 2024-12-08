@@ -8,9 +8,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import usuarios.Profesor;
+import usuarios.Usuario;
 
 @SuppressWarnings("serial")
 public class VentanaMenuProfesor extends JFrame implements ActionListener{
@@ -27,6 +29,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private VentanaCrearLearningPath ventanaCrearLearningPath;
 	private VentanaVerYEditarLearningPath ventanaVerYEditarLearningPath;
 	private VentanaCrearActividad ventanaCrearActividad;
+	private VentanaAgregarResenaORating ventanaAgregar;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear actividad";
@@ -96,7 +99,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		
         // Termina de configurar la ventana
         setTitle( "Menu Principal" );
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize( 800, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
@@ -127,6 +130,19 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	ventanaCrearActividad.setVisible( true );
         }
 	}
+	
+	public void agregarResenaORating() {
+		if (ventanaAgregar == null || !ventanaAgregar.isVisible()) {
+			ventanaAgregar = new VentanaAgregarResenaORating();
+			ventanaAgregar.setVisible(true);
+		}
+	}
+	
+	public void verEstadisticas() {
+		JOptionPane.showMessageDialog(this,"La ventana de ver Estadisticas no esta funcionando en estos momentos...\n"
+				+ " espera a nuestras proximas actualizaciones para disfrutar de esta función.");
+			
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -138,6 +154,10 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	verYEditarLearningPath();
         } else if (comando.equals(CREAR_ACTIVIDAD)) {
         	crearActividad();
+        } else if(comando.equals(AGREGAR)) {
+        	agregarResenaORating();
+        } else if(comando.equals(VERSTATS)) {
+        	verEstadisticas();
         } else if (comando.equals(SALIR)) {
         	this.dispose();
         }
