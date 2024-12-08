@@ -160,7 +160,7 @@ public class VentanaPrincipal extends JFrame {
 		if( ventanaMenuEstudiante== null || !ventanaMenuEstudiante.isVisible( ) )
     	{
     		ventanaMenuEstudiante = new VentanaMenuEstudiante( est);
-    		ventanaMenuProfesor.setVisible( true );
+    		ventanaMenuEstudiante.setVisible( true );
     	}
 	}
 

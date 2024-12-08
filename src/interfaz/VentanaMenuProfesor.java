@@ -87,8 +87,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		panelBotones.add(botonMenuVerEstadisticas);
 		//Salir
 		botonMenuSalir = new JButton(SALIR);
-		botonMenuCrearActividad.addActionListener(this);
-		botonMenuCrearActividad.setActionCommand(SALIR);
+		botonMenuSalir.addActionListener(this);
+		botonMenuSalir.setActionCommand(SALIR);
 		panelBotones.add(botonMenuSalir);
 		
 		add(titulo, BorderLayout.NORTH);
