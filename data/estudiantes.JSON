@@ -1,59 +1,13 @@
-[
-    {
-        "passWord": "12345",
-        "registroActividades": {},
-        "idLearningPathEnCurso": "4cd37215-501f-42de-834a-afd385bbe990",
-        "login": "Camila",
-        "intereses": [
-            "Futbol",
-            "Programar",
-            "Derecho"
-        ],
-        "registroLearningPaths": {"4cd37215-501f-42de-834a-afd385bbe990": 0},
-        "idActividadEnCurso": ""
-    },
-    {
-        "passWord": "milo",
-        "registroActividades": {
-            "c5996463-8bbf-44da-a33f-5819f9168068": "PENDIENTE",
-            "18ffeec4-95a6-414f-9da7-0479e955e2a7": "ENVIADA",
-            "018b9a37-ee7e-4568-a51a-61b3be7d9e74": "EXITOSA",
-            "9408875b-72de-40d4-b336-2a6d0ef563b4": "EXITOSA"
-        },
-        "idLearningPathEnCurso": "4cd37215-501f-42de-834a-afd385bbe990",
-        "login": "Gaby",
-        "intereses": [
-            "fisica",
-            "otakus",
-            "sofa"
-        ],
-        "registroLearningPaths": {},
-        "idActividadEnCurso": "18ffeec4-95a6-414f-9da7-0479e955e2a7"
-    },
-    {
-        "passWord": "kitty",
-        "registroActividades": {"064c2345-0bfe-438d-8c09-34a6f5c7aed9": "EXITOSA"},
-        "idLearningPathEnCurso": "6a93823f-f3bf-4c5d-956a-2953f636c6a6",
-        "login": "Male",
-        "intereses": [
-            "gatos",
-            "programar",
-            "rap de fisica"
-        ],
-        "registroLearningPaths": {},
-        "idActividadEnCurso": "064c2345-0bfe-438d-8c09-34a6f5c7aed9"
-    },
-    {
-        "passWord": "HAMBRE",
-        "registroActividades": {},
-        "idLearningPathEnCurso": "",
-        "login": "ESTUDI",
-        "intereses": [
-            "1",
-            "2",
-            "43"
-        ],
-        "registroLearningPaths": {},
-        "idActividadEnCurso": ""
-    }
-]
+[{
+    "passWord": "123",
+    "registroActividades": {},
+    "idLearningPathEnCurso": "",
+    "login": "y.cespedes",
+    "intereses": [
+        "futbol",
+        "baloncesto",
+        "piano"
+    ],
+    "registroLearningPaths": {},
+    "idActividadEnCurso": ""
+}]
