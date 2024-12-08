@@ -151,6 +151,9 @@ public class Estudiante extends Usuario {
     			}
     		}
     	}
+    	if(cantidadActividades == 0) {
+    		cantidadActividades = 1;
+    	}
     	double porcentajeCompletadas = ((double)contadorCompletadas/cantidadActividades)*100;
     	double porcentajeExitosas = ((double)contadorExitosas/cantidadActividades)*100;
     	listaRetorno.add(porcentajeCompletadas);
