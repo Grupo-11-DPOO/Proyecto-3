@@ -17,9 +17,6 @@ import usuarios.Estudiante;
 
 public class VentanaVerOfertaLearningPath extends JFrame{
 
-	/**
-	 * 
-	 */
 	private JButton agregarButton;
 	private Estudiante estudiante;
 	private static final long serialVersionUID = 1L;
@@ -91,9 +88,5 @@ public class VentanaVerOfertaLearningPath extends JFrame{
 		        detallesArea.setText(detalles);
 		    }
 		    
-
-
-
-
 	}
 

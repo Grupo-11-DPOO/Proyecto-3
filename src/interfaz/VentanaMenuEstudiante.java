@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import usuarios.Estudiante;
@@ -101,13 +102,20 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	}
 	
 	public void iniciarActividad() {
-		if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible()) {
+		
+		if(estudianteActual.getLearningPathEnCurso()== null) {
+			JOptionPane.showMessageDialog(this,"Por favor, seleccione un LearningPath antes de iniciar una actividad");
+			
+		} else if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible()) {
 			ventanaIniciarActividad = new VentanaIniciarActividad(this.estudianteActual);
 			ventanaIniciarActividad.setVisible(true);
 		}
 	}
 	public void completarActividad() {
-		if(ventanaCompletarActividad == null||!ventanaCompletarActividad.isVisible()) {
+		if(estudianteActual.getLearningPathEnCurso()== null) {
+			JOptionPane.showMessageDialog(this,"No hay ninguna actividad en curso para completar.");
+			
+		} else if(ventanaCompletarActividad == null||!ventanaCompletarActividad.isVisible()) {
 			ventanaCompletarActividad = new VentanaCompletarActividad();
 			ventanaCompletarActividad.setVisible(true);
 		}
@@ -128,8 +136,10 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	}
 	
 	public void salirLearningPath() {
-		if(ventanaSalirLPOAct == null||!ventanaSalirLPOAct.isVisible()) {
-			ventanaSalirLPOAct = new VentanaSalirLPOAct();
+		if(estudianteActual.getLearningPathEnCurso()== null) {
+			JOptionPane.showMessageDialog(this,"No hay ningun Learning Path ni actividad en curso!");
+		} else if(ventanaSalirLPOAct == null||!ventanaSalirLPOAct.isVisible()) {
+			ventanaSalirLPOAct = new VentanaSalirLPOAct(estudianteActual);
 			ventanaSalirLPOAct.setVisible(true);
 		}
 	}
