@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import actividades.Examen;
 import usuarios.Estudiante;
 
 public class VentanaMenuEstudiante extends JFrame implements ActionListener{
@@ -43,7 +44,6 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 		JLabel titulo = new JLabel("Menú Principal Estudiantes");
 		
 		JPanel panelBotones = new JPanel(new GridLayout(8,1));
-		
 		//Ver Oferta de Learning Paths
 		botonMenuVerOferta = new JButton(VEROFERTA);
 		botonMenuVerOferta.addActionListener(this);
@@ -116,7 +116,7 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 			JOptionPane.showMessageDialog(this,"No hay ninguna actividad en curso para completar.");
 			
 		} else if(ventanaCompletarActividad == null||!ventanaCompletarActividad.isVisible()) {
-			ventanaCompletarActividad = new VentanaCompletarActividad();
+			ventanaCompletarActividad = new VentanaCompletarActividad(this.estudianteActual);
 			ventanaCompletarActividad.setVisible(true);
 		}
 	}
