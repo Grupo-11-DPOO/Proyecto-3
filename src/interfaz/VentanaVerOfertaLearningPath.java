@@ -29,7 +29,7 @@ public class VentanaVerOfertaLearningPath extends JFrame{
 		// TODO Auto-generated constructor stub
 				this.estudiante = estudianteActual;
 		        setTitle("Oferta de Learning Paths");
-		        setSize(500, 400);
+		        setSize(800, 600);
 		        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		        ArrayList<LearningPath> paths = new ArrayList<>(VentanaPrincipal.learningPaths.values());
@@ -71,6 +71,7 @@ public class VentanaVerOfertaLearningPath extends JFrame{
 		        LearningPath pathSeleccionado = listaPaths.getSelectedValue();
 		        if (pathSeleccionado != null) {
 		            estudiante.setLearningPathEnCurso(pathSeleccionado);
+		            VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudianteActual);
 		            JOptionPane.showMessageDialog(this, 
 		                "Learning Path agregado correctamente a " + estudiante.getLogin(), 
 		                "con éxito", 

@@ -102,7 +102,7 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	
 	public void iniciarActividad() {
 		if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible()) {
-			ventanaIniciarActividad = new VentanaIniciarActividad();
+			ventanaIniciarActividad = new VentanaIniciarActividad(this.estudianteActual);
 			ventanaIniciarActividad.setVisible(true);
 		}
 	}

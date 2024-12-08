@@ -175,6 +175,7 @@ public class VentanaPrincipal extends JFrame {
 		datosEstudiante = sistemaRegistro.getDatosEstudiantes();
 		actividades = sistemaRegistro.actividades;
 		learningPaths = sistemaRegistro.learningPaths;
+		
         
 		new VentanaPrincipal();
      
