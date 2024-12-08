@@ -1,0 +1,16 @@
+[{
+    "descripcion": "Consiga un mapa mundi y empiece a leer",
+    "rating": 0,
+    "cantidadRating": 0,
+    "titulo": "Aprender Mapa Mundi",
+    "obligatorio": true,
+    "prerrequisitos": [],
+    "tiempoLimite": "Sun Dec 08 13:20:42 COT 2024",
+    "tipoActividad": "Recurso",
+    "objetivo": "Aprenderse los países",
+    "material": "ArchivoMapaMundi",
+    "resenas": [],
+    "duracionMinutos": 90,
+    "id": "217c026f-9227-4e7d-8edf-0dd281f31bda",
+    "nivel": "Avanzado"
+}]
