@@ -1,9 +1,12 @@
 package interfaz;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -12,10 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+import javax.swing.SwingConstants;
 import actividades.Opcion;
 import actividades.Quiz;
-import actividades.Recurso;
 import usuarios.Profesor;
 
 @SuppressWarnings("serial")
@@ -29,12 +31,15 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 	private int duracionMinutos;
 	private boolean obligatorio;
 	private JCheckBox chkPreRequisitos;
+	private JButton botonAgregarPreguntas;
 	private JButton botonCrear;
 	private JTextField txtCalificacionMinima;
 	private static final String Crear = "Crear";
+	private static final String AgregarPreguntas = "Agregar preguntas";
 	private VentanaAgregarPrerequisitos ventanaPrerequisitos;
 	private Quiz quizMultiple;
 	private HashMap<String, HashMap<Opcion, HashMap<String,String>>> preguntas;
+	private ArrayList<Opcion> respuestasCorrectas;
 	private VentanaAgregarPreguntas ventanaAgregarPreguntas;
 	
 	public VentanaCrearQuizMultiple(Profesor profesorActual, String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos, boolean obligatorio) {
@@ -50,14 +55,29 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 		setLayout(new GridLayout(4, 1));
 		
 		JPanel panelCalificacion = new JPanel();
-		JLabel labelCalificacion = new JLabel("Calificación mínima (valores enteros entre 0 y 100 exclusivamente)");
+		panelCalificacion.setLayout(new GridLayout(1,2));
+		JLabel labelCalificacion = new JLabel("Calificación mínima (entre 0 y 100)");
 		txtCalificacionMinima = new JTextField(20);
 		panelCalificacion.add(labelCalificacion);
 		panelCalificacion.add(txtCalificacionMinima);
 		add(panelCalificacion);
 		
+		JPanel panelPrereq = new JPanel();
+		panelPrereq.setLayout(new BorderLayout());
+		chkPreRequisitos = new JCheckBox("¿Tiene prerequisitos? ");	
+		chkPreRequisitos.setHorizontalTextPosition(SwingConstants.LEFT);
+		panelPrereq.add(chkPreRequisitos, BorderLayout.CENTER);
+		add(panelPrereq);
 		
+		botonAgregarPreguntas = new JButton(AgregarPreguntas);
+		botonAgregarPreguntas.addActionListener(this);
+		botonAgregarPreguntas.setActionCommand(AgregarPreguntas);
+		add(botonAgregarPreguntas);
 		
+		botonCrear = new JButton(Crear);
+		botonCrear.addActionListener(this);
+		botonCrear.setActionCommand(Crear);
+		add(botonCrear);
 		
         // Termina de configurar la ventana
         setTitle( "Crear quiz (opción múltiple)" );
@@ -73,14 +93,29 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 		this.preguntas = preguntas;
 	}
 	
+	public void setRespuestasCorrectas(ArrayList<Opcion> respuestasCorrectas) {
+		this.respuestasCorrectas = respuestasCorrectas;
+	}
+	
 	public void crear() {
 		String stringCalificacionMinima = txtCalificacionMinima.getText();
 		try {
             int cantidad = Integer.parseInt(stringCalificacionMinima);
             if (cantidad > 0 && cantidad <= 100) {
     			try {
-    				if (!preguntas.isEmpty()) {
+    				if (preguntas != null) {
     					quizMultiple = profesorActual.crearActividadQuiz(titulo, objetivo, descripcion, nivel, duracionMinutos, obligatorio, cantidad);    					
+	    				quizMultiple.setPreguntas(preguntas);
+	    				quizMultiple.setRespuestasCorrectas(respuestasCorrectas);
+    					if (chkPreRequisitos.isSelected()) {
+		    				mostrarVentanaPrerequisitos();
+		    				this.dispose();
+		    			} else {
+		    				profesorActual.guardarActividad(quizMultiple);
+		    				VentanaPrincipal.sistemaRegistro.guardarActividad(quizMultiple);
+		    				VentanaPrincipal.sistemaRegistro.guardarProfesor(profesorActual);
+		    				this.dispose();			
+		    			}
     				} else {
     					JOptionPane.showMessageDialog(this,  "No puede crear un quiz sin preguntas.", "Falta de preguntas", JOptionPane.ERROR_MESSAGE);    					
     				}
@@ -88,16 +123,6 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
     			} catch (Exception e) {
     				e.printStackTrace();
     			}
-    			if (chkPreRequisitos.isSelected()) {
-    				mostrarVentanaPrerequisitos();
-    				this.dispose();
-    			} else {
-    				profesorActual.guardarActividad(quizMultiple);
-    				VentanaPrincipal.sistemaRegistro.guardarActividad(quizMultiple);
-    				VentanaPrincipal.sistemaRegistro.guardarProfesor(profesorActual);
-    				this.dispose();			
-    			}
-            	
             } else {
             	JOptionPane.showMessageDialog(this,  "Input inválido. Por favor solo ingrese valores entre 0 y 100", "Input error", JOptionPane.ERROR_MESSAGE);
             }
@@ -120,7 +145,6 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 		{
     		ventanaPrerequisitos = new VentanaAgregarPrerequisitos(quizMultiple, profesorActual);
     		ventanaPrerequisitos.setVisible(true);
-    		
 		}
 	}
 
@@ -129,6 +153,8 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 		String comando = e.getActionCommand( );
         if (comando.equals(Crear)) {
         	crear();
+        } else if (comando.equals(AgregarPreguntas)){
+        	mostrarVentanaAgregarPreguntas();
         }
 	}
 }

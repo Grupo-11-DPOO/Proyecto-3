@@ -172,7 +172,6 @@ public class Profesor extends Usuario {
 	public Recurso crearActividadRecurso(String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos,
 			boolean obligatorio, String material) throws Exception {
 			Recurso recurso = new Recurso(titulo, objetivo, descripcion, nivel, duracionMinutos, obligatorio, material);
-			System.out.println("Su actividad de tipo recurso ha sido creada.");
 			getDataActividades().put(recurso.getId(), recurso);
 			return recurso;
 	}
@@ -185,20 +184,17 @@ public class Profesor extends Usuario {
 	public Tarea crearActividadTarea(String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos, boolean obligatorio,
 			String idActividadTarea) throws Exception {
 			Tarea tarea = new Tarea(titulo, objetivo,descripcion, nivel, duracionMinutos, obligatorio, idActividadTarea);
-			System.out.println("Su actividad de tipo tarea ha sido creada.");
 			return tarea;
 		}
 
 	public Examen crearActividadExamen (String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos, boolean obligatorio) throws Exception {
 			Examen examen= new Examen(titulo, objetivo, descripcion, nivel, duracionMinutos, obligatorio);
-			System.out.println("Su actividad de tipo examen ha sido creada.");
 			getDataActividades().put(examen.getId(), examen);
 			return examen;
 		}
 	
 	public Encuesta crearActividadEncuesta (String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos, boolean obligatorio) throws Exception {
 			Encuesta encuesta= new Encuesta(titulo, objetivo, descripcion, nivel, duracionMinutos, obligatorio);
-			System.out.println("Su actividad de tipo encuesta ha sido creada.");
 			getDataActividades().put(encuesta.getId(), encuesta);
 			return encuesta;
 		}
@@ -206,14 +202,12 @@ public class Profesor extends Usuario {
 	public QuizVerdad crearQuizVerdaderoFalso(String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos,
 			boolean obligatorio, float calificacionMinima) {
 		QuizVerdad quiz= new QuizVerdad(titulo, objetivo, descripcion,nivel ,duracionMinutos, obligatorio, calificacionMinima);
-		System.out.println("Su actividad de tipo quiz de verdadero o falso ha sido creada.");
 		return quiz;
 	}
 	
 	public Quiz crearActividadQuiz (String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos,
 			boolean obligatorio, float calificacionMinima) {	
 		Quiz quiz= new Quiz(titulo, objetivo, descripcion,nivel ,duracionMinutos, obligatorio, calificacionMinima);
-		System.out.println("Su actividad de tipo quiz de selección multiple ha sido creada.");
 		return quiz;
 	}
 	

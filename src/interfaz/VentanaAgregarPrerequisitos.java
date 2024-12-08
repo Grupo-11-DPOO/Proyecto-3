@@ -150,7 +150,7 @@ public class VentanaAgregarPrerequisitos extends JFrame implements ActionListene
 			VentanaPrincipal.sistemaRegistro.guardarActividad(actividad);
 			VentanaPrincipal.sistemaRegistro.guardarProfesor(profesorActual);
 			this.dispose();
-			JOptionPane.showMessageDialog(this,"¡Recurso creado exitosamente!");	
+			JOptionPane.showMessageDialog(this,"¡Actividad creada exitosamente!");	
         	this.dispose();
         }
 	}

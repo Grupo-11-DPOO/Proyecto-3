@@ -94,5 +94,44 @@
         "duracionMinutos": 454,
         "id": "fbfc049f-8dbe-43ca-bb9a-8a3bfc013b13",
         "nivel": "Avanzado"
+    },
+    {
+        "descripcion": "fesfsfsef",
+        "calificacionMinima": 75,
+        "respuestasCorrectas": ["A"],
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "fesfsefse",
+        "obligatorio": false,
+        "prerrequisitos": [{
+            "descripcion": "Consiga un mapa mundi y empiece a leer",
+            "rating": 0,
+            "cantidadRating": 0,
+            "titulo": "Aprender Mapa Mundi",
+            "obligatorio": true,
+            "prerrequisitos": [],
+            "tiempoLimite": "Sun Dec 08 13:20:42 COT 2024",
+            "tipoActividad": "Recurso",
+            "objetivo": "Aprenderse los países",
+            "material": "ArchivoMapaMundi",
+            "resenas": [],
+            "duracionMinutos": 90,
+            "id": "217c026f-9227-4e7d-8edf-0dd281f31bda",
+            "nivel": "Avanzado"
+        }],
+        "tiempoLimite": "Sun Dec 08 18:53:14 COT 2024",
+        "tipoActividad": "Quiz",
+        "objetivo": "fsefsefseffse",
+        "respuestasEstudiantes": {},
+        "resenas": [],
+        "duracionMinutos": 4,
+        "preguntas": {"cual no es un pais": {
+            "A": {"fortnite": "es un juego"},
+            "B": {"colombia": "si es"},
+            "C": {"usa": "si es"},
+            "D": {"mexico": "orale"}
+        }},
+        "id": "df40ba31-ff2f-45ea-8689-33c68456649f",
+        "nivel": "Bajo"
     }
 ]

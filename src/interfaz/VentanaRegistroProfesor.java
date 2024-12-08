@@ -59,7 +59,7 @@ public class VentanaRegistroProfesor extends JFrame implements ActionListener{
         // Termina de configurar la ventana
         setTitle( "Registro Profesores" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 300, 150 );
+        setSize( 300, 160 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
