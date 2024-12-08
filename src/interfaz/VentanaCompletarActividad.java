@@ -17,6 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import actividades.Actividad;
+import actividades.Encuesta;
 import actividades.Estado;
 import actividades.Examen;
 import actividades.TipoActividades;
@@ -70,6 +71,17 @@ public class VentanaCompletarActividad extends JFrame {
 					VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 					VentanaPrincipal.sistemaRegistro.guardarActividad(examen);
 				}
+				
+				if(tipoAct == TipoActividades.Encuesta) {
+					Encuesta encuesta = (Encuesta) actividad;
+					encuesta.guardarRespuestas(estudiante);
+					estudiante.getRegistroActividades().put(actividad.getId(), Estado.EXITOSA);
+					labelCalificacion.setText("Estado de la Actividad:"+ Estado.EXITOSA.name());
+					VentanaPrincipal.sistemaRegistro.guardarActividad(encuesta);
+					VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+					
+					
+				}
 			}
         	
         });
@@ -92,10 +104,12 @@ public class VentanaCompletarActividad extends JFrame {
         	if(tipoAct == TipoActividades.Examen) {
         		Examen examen = (Examen) actividad;
         		panelContenido.add(examen.getContenido());
-      
-        		
         	}
-        	
+        	if (tipoAct == TipoActividades.Encuesta) {
+        		
+        		Encuesta encuesta = (Encuesta) actividad;
+        		panelContenido.add(encuesta.getContenido());
+        	}
         }
         
 	}
