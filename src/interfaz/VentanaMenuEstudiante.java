@@ -27,7 +27,14 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	private static final String AGREGAR = "Agregar reseñas y/o rating a actividad";
 	private static final String PROGRESO = "Ver progreso del Learning Path actual";
 	private static final String SALIRLP = "Salirse del Learning Path o Actividad actual";
-	private static final String EXIT = "Salir";
+	private static final String EXIT = "Cerrar sesión";
+	
+	private VentanaVerOfertaLearningPath verOfertaVentana;
+	private VentanaIniciarActividad ventanaIniciarActividad;
+	private VentanaCompletarActividad ventanaCompletarActividad;
+	private VentanaAgregarResenaORating ventanaAgregar;
+	private VentanaVerProgresoLP ventanaVerProgreso;
+	private VentanaSalirLPOAct ventanaSalirLPOAct;
 	
 	
 	public VentanaMenuEstudiante(Estudiante est) {
@@ -87,7 +94,48 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	}
 	
 	public void verOfertaLP() {
-		
+		if(verOfertaVentana == null || !verOfertaVentana.isVisible()) {
+			verOfertaVentana = new VentanaVerOfertaLearningPath();
+			verOfertaVentana.setVisible(true);
+		}
+	}
+	
+	public void iniciarActividad() {
+		if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible()) {
+			ventanaIniciarActividad = new VentanaIniciarActividad();
+			ventanaIniciarActividad.setVisible(true);
+		}
+	}
+	public void completarActividad() {
+		if(ventanaCompletarActividad == null||!ventanaCompletarActividad.isVisible()) {
+			ventanaCompletarActividad = new VentanaCompletarActividad();
+			ventanaCompletarActividad.setVisible(true);
+		}
+	}
+	
+	public void agregarROR() {
+		if(ventanaAgregar == null||!ventanaAgregar.isVisible()) {
+			ventanaAgregar = new VentanaAgregarResenaORating();
+			ventanaAgregar.setVisible(true);
+		}
+	}
+	
+	public void verProgreso() {
+		if(ventanaVerProgreso == null||!ventanaVerProgreso.isVisible()) {
+			ventanaVerProgreso = new VentanaVerProgresoLP();
+			ventanaVerProgreso.setVisible(true);
+		}
+	}
+	
+	public void salirLearningPath() {
+		if(ventanaSalirLPOAct == null||!ventanaSalirLPOAct.isVisible()) {
+			ventanaSalirLPOAct = new VentanaSalirLPOAct();
+			ventanaSalirLPOAct.setVisible(true);
+		}
+	}
+	
+	public void salirVentana() {
+		this.dispose();
 	}
 
 	@Override
@@ -95,6 +143,18 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 		String comando = e.getActionCommand();
 		if(comando.equals(VEROFERTA)) {
 			verOfertaLP();
+		} else if(comando.equals(INICIAR)) {
+			iniciarActividad();
+		} else if(comando.equals(COMPLETAR)) {
+			completarActividad();
+		} else if(comando.equals(AGREGAR)) {
+			agregarROR();
+		} else if(comando.equals(PROGRESO)) {
+			verProgreso();
+		} else if(comando.equals(SALIRLP)) {
+			salirLearningPath();
+		} else if(comando.equals(EXIT)) {
+			salirVentana();
 		}
 		
 	}

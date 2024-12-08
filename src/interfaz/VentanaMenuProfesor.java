@@ -95,7 +95,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		
         // Termina de configurar la ventana
         setTitle( "Menu Principal" );
-        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize( 800, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
