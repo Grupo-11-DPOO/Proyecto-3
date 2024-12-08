@@ -95,7 +95,7 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	
 	public void verOfertaLP() {
 		if(verOfertaVentana == null || !verOfertaVentana.isVisible()) {
-			verOfertaVentana = new VentanaVerOfertaLearningPath();
+			verOfertaVentana = new VentanaVerOfertaLearningPath(this.estudianteActual);
 			verOfertaVentana.setVisible(true);
 		}
 	}
