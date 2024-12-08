@@ -146,14 +146,17 @@
     },
     {
         "descripcion": "siii",
-        "fechaModificacion": "2024-12-05T21:59:32.682930600",
-        "rating": 4.599999904632568,
+        "fechaModificacion": "2024-12-07T23:46:54.083471900",
+        "rating": 2.299999952316284,
         "titulo": "EDITADDOOOO",
         "fechaCreacion": "2024-12-05T17:23:38.954136900",
-        "duracion": 9,
+        "duracion": 16,
         "id": "42d68eac-eb87-4a96-a86b-62e6cd2ff361",
-        "actividades": ["064c2345-0bfe-438d-8c09-34a6f5c7aed9"],
+        "actividades": [
+            "064c2345-0bfe-438d-8c09-34a6f5c7aed9",
+            "b48892e7-f946-44c9-9f31-711b623a11cb"
+        ],
         "nivel": "Avanzado",
-        "version": 5
+        "version": 7
     }
 ]

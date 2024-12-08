@@ -17,10 +17,13 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private Profesor profesorActual;
 	private JButton botonMenuCrearLearningPath;
 	private JButton botonMenuVerYEditarLearningPath;
+	private JButton botonCrearActividad;
 	private VentanaCrearLearningPath ventanaCrearLearningPath;
 	private VentanaVerYEditarLearningPath ventanaVerYEditarLearningPath;
+	private VentanaCrearActividad ventanaCrearActividad;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
+	private static final String CREAR_ACTIVIDAD = "Crear actividad";
 	
 	public VentanaMenuProfesor(Profesor profesorActual) {
 		
@@ -42,6 +45,13 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		botonMenuVerYEditarLearningPath.addActionListener(this);
 		botonMenuVerYEditarLearningPath.setActionCommand(VERYDITAR);
 		panelBotones.add(botonMenuVerYEditarLearningPath);
+		
+		// Crear actividad
+		botonCrearActividad = new JButton(CREAR_ACTIVIDAD);
+		botonCrearActividad.addActionListener(this);
+		botonCrearActividad.setActionCommand(CREAR_ACTIVIDAD);
+		panelBotones.add(botonCrearActividad);
+
 		
 		add(titulo, BorderLayout.NORTH);
 		add(panelBotones, BorderLayout.SOUTH);
@@ -72,6 +82,14 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	ventanaVerYEditarLearningPath.setVisible( true );
         }
 	}
+	
+	public void crearActividad() {
+        if( ventanaCrearActividad== null || !ventanaCrearActividad.isVisible( ) )
+        {
+        	ventanaCrearActividad = new VentanaCrearActividad(profesorActual);
+        	ventanaCrearActividad.setVisible( true );
+        }
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -81,6 +99,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
             crearLearningPath();
         } else if (comando.equals(VERYDITAR)) {
         	verYEditarLearningPath();
+        } else if (comando.equals(CREAR_ACTIVIDAD)) {
+        	crearActividad();
         }
 	}
 	
