@@ -30,7 +30,7 @@ public class VentanaVerOfertaLearningPath extends JFrame{
 				this.estudiante = estudianteActual;
 		        setTitle("Oferta de Learning Paths");
 		        setSize(500, 400);
-		        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		        ArrayList<LearningPath> paths = new ArrayList<>(VentanaPrincipal.learningPaths.values());
 

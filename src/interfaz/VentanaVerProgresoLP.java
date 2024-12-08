@@ -2,6 +2,7 @@ package interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -11,7 +12,7 @@ import javax.swing.JPanel;
 
 import usuarios.Estudiante;
 
-public class VentanaVerProgresoLP extends JFrame {
+public class VentanaVerProgresoLP extends JFrame implements ActionListener{
 	private Estudiante estudianteActivo;
 	private JPanel panelBotones;
 	private JPanel panelContenido;
@@ -24,9 +25,6 @@ public class VentanaVerProgresoLP extends JFrame {
 		
 		estudianteActivo = estudianteActual;
 		
-		List<Double> progreso = estudianteActivo.verProgresoLearningPath();
-		double porcentajeCompletadas = progreso.get(0);
-		double porcentajeExitosas = progreso.get(1);
 		
 		panelBotones = new JPanel(new GridLayout(3,1));
 		panelContenido = new JPanel();
@@ -34,8 +32,14 @@ public class VentanaVerProgresoLP extends JFrame {
 		JLabel titulo = new JLabel("Estadísticas de su progreso en el Learning Path en curso");
 		
 		JButton botonCompletadas = new JButton(COMPLETADAS);
+		
 		JButton botonExitosas = new JButton(EXITOSAS);
+	
 		JButton botonMenuPrincipal = new JButton(PRINCIPAL);
+		
+		
+		JLabel contenido = new JLabel("Aquí aparecera el contenido esperado.");
+		panelContenido.add(contenido);
 		
 		panelBotones.add(botonCompletadas);
 		panelBotones.add(botonExitosas);
@@ -43,7 +47,11 @@ public class VentanaVerProgresoLP extends JFrame {
 		
 		add(titulo, BorderLayout.NORTH);
 		add(panelBotones, BorderLayout.WEST);
-		add(panelContenido, BorderLayout.EAST);
+		add(panelContenido, BorderLayout.CENTER);
+		
+		//List<Double> progreso = estudianteActivo.verProgresoLearningPath();
+				//double porcentajeCompletadas = progreso.get(0);
+				//double porcentajeExitosas = progreso.get(1);
 		
 		// TODO Auto-generated constructor stub
 		setTitle( "Ver Progreso del Learning Path" );
@@ -53,5 +61,19 @@ public class VentanaVerProgresoLP extends JFrame {
         setLocationRelativeTo( null );
         setVisible( true );
 	}
+	
+	public void mostrarCompletadasYExitosas() {
+		
+	}
+	
+	public void mostrarExitosas() {
+		
+		
+	}
+	
+	public void salirMenuPrincipal() {
+		this.dispose();
+	}
+	
 
 }
