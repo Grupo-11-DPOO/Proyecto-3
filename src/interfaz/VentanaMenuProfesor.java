@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,13 +19,24 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private JButton botonMenuCrearLearningPath;
 	private JButton botonMenuVerYEditarLearningPath;
 	private JButton botonCrearActividad;
+	private JButton botonMenuCrearActividad;
+	private JButton botonMenuClonarActividad;
+	private JButton botonMenuVerYEditarActividad;
+	private JButton botonMenuAgregar;
+	private JButton botonMenuVerEstadisticas;
+	private JButton botonMenuSalir;
 	private VentanaCrearLearningPath ventanaCrearLearningPath;
 	private VentanaVerYEditarLearningPath ventanaVerYEditarLearningPath;
 	private VentanaCrearActividad ventanaCrearActividad;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear actividad";
-	
+
+	private static final String VERYEDITARACTI = "Ver y Editar Actividades";
+	private static final String CLONAR = "Clonar una Actividad";
+	private static final String AGREGAR = "Agregar reseñas y/o rating a actividad";
+	private static final String VERSTATS = "Ver estadísticas";
+	private static final String SALIR = "Salir";
 	public VentanaMenuProfesor(Profesor profesorActual) {
 		
 		setLayout(new BorderLayout());
@@ -32,7 +44,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		
 		JLabel titulo = new JLabel("Menú principal profesores");
 		
-		JPanel panelBotones = new JPanel();
+		JPanel panelBotones = new JPanel(new GridLayout(8,1));
 		
 		// Crear Learning Path
 		botonMenuCrearLearningPath = new JButton(CREAR);
@@ -51,15 +63,41 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		botonCrearActividad.addActionListener(this);
 		botonCrearActividad.setActionCommand(CREAR_ACTIVIDAD);
 		panelBotones.add(botonCrearActividad);
-
+		
+		//Clonar actividad
+		botonMenuClonarActividad = new JButton(CLONAR);
+		botonMenuClonarActividad.addActionListener(this);
+		botonMenuClonarActividad.setActionCommand(CLONAR);
+		panelBotones.add(botonMenuClonarActividad);
+		
+		//Ver y editar Actividad
+		botonMenuVerYEditarActividad= new JButton(VERYEDITARACTI);
+		botonMenuVerYEditarActividad.addActionListener(this);
+		botonMenuVerYEditarActividad.setActionCommand(VERYEDITARACTI);
+		panelBotones.add(botonMenuVerYEditarActividad);
+		//Agregar reseña o Rating
+		botonMenuAgregar = new JButton(AGREGAR);
+		botonMenuAgregar.addActionListener(this);
+		botonMenuAgregar.setActionCommand(AGREGAR);
+		panelBotones.add(botonMenuAgregar);
+		//VerEstadisticas
+		botonMenuVerEstadisticas = new JButton(VERSTATS);
+		botonMenuVerEstadisticas.addActionListener(this);
+		botonMenuVerEstadisticas.setActionCommand(VERSTATS);
+		panelBotones.add(botonMenuVerEstadisticas);
+		//Salir
+		botonMenuSalir = new JButton(SALIR);
+		botonMenuCrearActividad.addActionListener(this);
+		botonMenuCrearActividad.setActionCommand(SALIR);
+		panelBotones.add(botonMenuSalir);
 		
 		add(titulo, BorderLayout.NORTH);
-		add(panelBotones, BorderLayout.SOUTH);
+		add(panelBotones, BorderLayout.WEST);
 		
 		
         // Termina de configurar la ventana
         setTitle( "Menu Principal" );
-        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize( 800, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
@@ -102,6 +140,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         } else if (comando.equals(CREAR_ACTIVIDAD)) {
         	crearActividad();
         }
+        //TODO terminar de configurar las otras ventanas
 	}
 	
 	

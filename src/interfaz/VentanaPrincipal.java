@@ -32,7 +32,7 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaRegistroProfesor ventanaRegistroProfesores;
 	private VentanaRegistroEstudiante ventanaRegistroEstudiantes;
 	private VentanaMenuProfesor ventanaMenuProfesor;
-	
+	private VentanaMenuEstudiante ventanaMenuEstudiante;
 	private PanelIngreso pIngreso;
 	private PanelBotones pBotones;
 	
@@ -93,8 +93,8 @@ public class VentanaPrincipal extends JFrame {
 			} else {
 				if (sistemaRegistro.iniciarSesionEstudiante(login, password)) {
 					// Menu estudiante
-					// TODO Ventana estudiante
-					System.out.println("ENTRA VENTANA ESTUDIANTE");
+					Estudiante estu = datosEstudiante.get(login);
+					mostrarVentanaMenuEstudiante(estu);
 				} else {
 					// Datos incorrectos
 					JOptionPane.showMessageDialog(this, "Su login y/o contraseña son incorrectos.", "Credenciales incorrectos", JOptionPane.OK_OPTION);
@@ -152,6 +152,14 @@ public class VentanaPrincipal extends JFrame {
     	if( ventanaMenuProfesor== null || !ventanaMenuProfesor.isVisible( ) )
     	{
     		ventanaMenuProfesor = new VentanaMenuProfesor( profesor );
+    		ventanaMenuProfesor.setVisible( true );
+    	}
+	}
+	
+	public void mostrarVentanaMenuEstudiante(Estudiante est) {
+		if( ventanaMenuEstudiante== null || !ventanaMenuEstudiante.isVisible( ) )
+    	{
+    		ventanaMenuEstudiante = new VentanaMenuEstudiante( est);
     		ventanaMenuProfesor.setVisible( true );
     	}
 	}

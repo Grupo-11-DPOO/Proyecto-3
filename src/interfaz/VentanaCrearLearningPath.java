@@ -31,16 +31,22 @@ public class VentanaCrearLearningPath extends JFrame implements ActionListener{
 		
 		this.profesorActual = profesorActual;
 		
-		setLayout(new GridLayout(4, 2));
+		setLayout(null);
 
 		JLabel labelTitulo = new JLabel("Título:");
+		labelTitulo.setBounds(10,20,80,25);
 		txtTitulo = new JTextField();
+		txtTitulo.setBounds(100,20,165,25);
 		
 		JLabel labelObjetivo = new JLabel("Objetivo:");
+		labelObjetivo.setBounds(10,50, 80, 25);
 		txtObjetivo = new JTextField();
+		txtObjetivo.setBounds(100, 50, 165,25);
 		
 		JLabel labelNivel = new JLabel("Nivel:");
+		labelNivel.setBounds(10, 80, 80, 25);
 		cbbNivel = new JComboBox<String>(niveles);
+		cbbNivel.setBounds(100, 80,165,25);
 		
 		add(labelTitulo);
 		add(txtTitulo);
@@ -52,13 +58,13 @@ public class VentanaCrearLearningPath extends JFrame implements ActionListener{
 		botonCrear = new JButton(CREAR);
 		botonCrear.addActionListener(this);
 		botonCrear.setActionCommand(CREAR);
-		
+		botonCrear.setBounds(75, 110,80, 25);
 		add(botonCrear);
 		
         // Termina de configurar la ventana
         setTitle( "Crear Learning Path" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 800, 900 );
+        setSize( 300, 300 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
