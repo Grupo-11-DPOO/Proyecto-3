@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import usuarios.Estudiante;
 
+@SuppressWarnings("serial")
 public class VentanaSalirLPOAct extends JFrame implements ActionListener{
 	private Estudiante estudianteActual;
 	private JButton botonSalirLP;
@@ -33,8 +34,6 @@ public class VentanaSalirLPOAct extends JFrame implements ActionListener{
 		add(botonSalirLP);
 		add(botonSalirActi);
 		
-		
-		// TODO Auto-generated constructor stub
 		setTitle( "Salir Learning Path o Actividad" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
         setSize( 300, 300 );

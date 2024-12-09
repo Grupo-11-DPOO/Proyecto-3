@@ -38,14 +38,11 @@ public class VentanaPrincipal extends JFrame {
 		JLabel labelTitulo = new JLabel();
 		labelTitulo.setText("Bienvenido al Sistema Operativo de Learning Paths!");
 		labelTitulo.setBackground(new Color(255,255,255));
-		// TODO centrar y poner bonito
         add( labelTitulo, BorderLayout.NORTH);
         
-        // TODO tener un panel central
         pIngreso = new PanelIngreso();
         add(pIngreso, BorderLayout.CENTER);
-        
-        // TODO panel de botones iniciar sesion registrarse 
+
         pBotones = new PanelBotones(this);
         pBotones.setBackground(new Color(255,255,255));
 
@@ -137,7 +134,7 @@ public class VentanaPrincipal extends JFrame {
     {
     	if( ventanaRegistroEstudiantes== null || !ventanaRegistroEstudiantes.isVisible( ) )
     	{
-    		ventanaRegistroEstudiantes = new VentanaRegistroEstudiante( this );
+    		ventanaRegistroEstudiantes = new VentanaRegistroEstudiante();
     		ventanaRegistroEstudiantes.setVisible( true );
     	}
     }

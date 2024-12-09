@@ -4,16 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
-import actividades.Examen;
 import usuarios.Estudiante;
 
+@SuppressWarnings("serial")
 public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	private Estudiante estudianteActual;
 	private JButton botonMenuVerOferta;
@@ -29,8 +27,7 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	private static final String AGREGAR = "Agregar reseñas y/o rating a actividad";
 	private static final String PROGRESO = "Ver progreso del Learning Path actual";
 	private static final String SALIRLP = "Salirse del Learning Path o Actividad actual";
-	private static final String EXIT = "Cerrar sesión";
-	
+	private static final String EXIT = "Salir";
 	private VentanaVerOfertaLearningPath verOfertaVentana;
 	private VentanaIniciarActividad ventanaIniciarActividad;
 	private VentanaCompletarActividad ventanaCompletarActividad;
@@ -38,12 +35,11 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	private VentanaVerProgresoLP ventanaVerProgreso;
 	private VentanaSalirLPOAct ventanaSalirLPOAct;
 	
-	
 	public VentanaMenuEstudiante(Estudiante est) {
 		estudianteActual = est;
 		JLabel titulo = new JLabel("Menú Principal Estudiantes");
 		
-		JPanel panelBotones = new JPanel(new GridLayout(8,1));
+		JPanel panelBotones = new JPanel(new GridLayout(7,1));
 		//Ver Oferta de Learning Paths
 		botonMenuVerOferta = new JButton(VEROFERTA);
 		botonMenuVerOferta.addActionListener(this);
@@ -82,13 +78,12 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 		botonSalir.setActionCommand(EXIT);
 		panelBotones.add(botonSalir);
 		
-		
 		add(titulo, BorderLayout.NORTH);
 		add(panelBotones, BorderLayout.WEST);
 		
 		setTitle( "Menu Principal" );
         setDefaultCloseOperation( EXIT_ON_CLOSE );
-        setSize( 800, 600 );
+        setSize( 660, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
