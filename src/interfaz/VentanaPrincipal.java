@@ -84,7 +84,7 @@ public class VentanaPrincipal extends JFrame {
 					// Menu profesor
 					Profesor profesor = datosProfesor.get(login);
 					mostrarVentanaMenuProfesor(profesor);
-					
+					this.dispose();
 					
 				} else {
 					// Datos incorrectos
@@ -95,6 +95,7 @@ public class VentanaPrincipal extends JFrame {
 					// Menu estudiante
 					Estudiante estu = datosEstudiante.get(login);
 					mostrarVentanaMenuEstudiante(estu);
+					this.dispose();
 				} else {
 					// Datos incorrectos
 					JOptionPane.showMessageDialog(this, "Su login y/o contraseña son incorrectos.", "Credenciales incorrectos", JOptionPane.OK_OPTION);

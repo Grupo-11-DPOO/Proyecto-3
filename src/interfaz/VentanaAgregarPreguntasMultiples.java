@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import actividades.Opcion;
 
 @SuppressWarnings("serial")
-public class VentanaAgregarPreguntas extends JFrame implements ActionListener{
+public class VentanaAgregarPreguntasMultiples extends JFrame implements ActionListener {
 
 	private HashMap<String, HashMap<Opcion, HashMap<String,String>>> preguntas;
 	private ArrayList<Opcion> respuestasCorrectas;
@@ -47,7 +47,7 @@ public class VentanaAgregarPreguntas extends JFrame implements ActionListener{
 	private final static String VOLVER = "Guardar y volver";
 	
 	
-	public VentanaAgregarPreguntas(VentanaCrearQuizMultiple ventanaPadre) {
+	public VentanaAgregarPreguntasMultiples(VentanaCrearQuizMultiple ventanaPadre) {
 		
 		this.ventanaPadre = ventanaPadre;
 		this.preguntas = new HashMap<String, HashMap<Opcion, HashMap<String,String>>>();
@@ -91,19 +91,19 @@ public class VentanaAgregarPreguntas extends JFrame implements ActionListener{
 		add(txtExplicacionD);
 		
 		JLabel labelOpcionCorrecta = new JLabel("Opción correcta");
-		radioOpcionA = new JRadioButton("A");
+		radioOpcionA = new JRadioButton(A);
 		radioOpcionA.addActionListener(this);
 		radioOpcionA.setActionCommand(A);
 		
-		radioOpcionB = new JRadioButton("B");
+		radioOpcionB = new JRadioButton(B);
 		radioOpcionB.addActionListener(this);
 		radioOpcionB.setActionCommand(B);
 		
-		radioOpcionC = new JRadioButton("C");
+		radioOpcionC = new JRadioButton(C);
 		radioOpcionC.addActionListener(this);
 		radioOpcionC.setActionCommand(C);
 		
-		radioOpcionD = new JRadioButton("D");
+		radioOpcionD = new JRadioButton(D);
 		radioOpcionD.addActionListener(this);
 		radioOpcionD.setActionCommand(D);
 		
@@ -133,7 +133,7 @@ public class VentanaAgregarPreguntas extends JFrame implements ActionListener{
 		add(volver);
 		
         // Termina de configurar la ventana
-        setTitle( "Crear preguntas" );
+        setTitle( "Crear preguntas (opción múltiple)" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
         setSize( 700, 900 );
         setResizable(false);
@@ -216,5 +216,4 @@ public class VentanaAgregarPreguntas extends JFrame implements ActionListener{
         	volverYGuardar();
         }
 	}
-
 }

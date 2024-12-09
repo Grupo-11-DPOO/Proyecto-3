@@ -133,5 +133,59 @@
         }},
         "id": "df40ba31-ff2f-45ea-8689-33c68456649f",
         "nivel": "Bajo"
+    },
+    {
+        "descripcion": "efefes",
+        "calificacionMinima": 60,
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "Prueba Quiz VF",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 19:26:36 COT 2024",
+        "tipoActividad": "QuizVerdad",
+        "objetivo": "fesfef",
+        "respuestas": [
+            "Verdadero",
+            "Verdadero",
+            "Falso"
+        ],
+        "respuestasEstudiantes": {},
+        "resenas": [],
+        "duracionMinutos": 3,
+        "preguntas": [
+            "Se cree importante?",
+            "El proyecto de DPOO debio tener mas tiempo",
+            "Esta es la peor seccion"
+        ],
+        "id": "434c091e-1eed-4310-ac29-12cabacce84c",
+        "nivel": "Avanzado"
+    },
+    {
+        "descripcion": "fsef",
+        "calificacionMinima": 50,
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "intento doble quiz vf",
+        "obligatorio": false,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 19:27:41 COT 2024",
+        "tipoActividad": "QuizVerdad",
+        "objetivo": "fe",
+        "respuestas": [
+            "Verdadero",
+            "Falso",
+            "Falso"
+        ],
+        "respuestasEstudiantes": {},
+        "resenas": [],
+        "duracionMinutos": 4,
+        "preguntas": [
+            "Hola",
+            "Chaoo",
+            "Desempate"
+        ],
+        "id": "e09a93ed-ef1b-4ac4-bbbb-310e723320b0",
+        "nivel": "Bajo"
     }
 ]

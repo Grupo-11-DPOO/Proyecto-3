@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class QuizVerdad extends Actividad {
 	public float calificacionMinima;
-	private ArrayList<String>preguntas; 
+	private ArrayList<String> preguntas; 
 	private ArrayList<VerdaderoFalso> respuestasCorrectas;
 	private HashMap<String, ArrayList<VerdaderoFalso>> respuestasEstudiantes;
 	

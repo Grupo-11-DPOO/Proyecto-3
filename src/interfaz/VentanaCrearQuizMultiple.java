@@ -6,8 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -40,7 +38,7 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 	private Quiz quizMultiple;
 	private HashMap<String, HashMap<Opcion, HashMap<String,String>>> preguntas;
 	private ArrayList<Opcion> respuestasCorrectas;
-	private VentanaAgregarPreguntas ventanaAgregarPreguntas;
+	private VentanaAgregarPreguntasMultiples ventanaAgregarPreguntas;
 	
 	public VentanaCrearQuizMultiple(Profesor profesorActual, String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos, boolean obligatorio) {
 		
@@ -86,7 +84,6 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
-		
 	}
 	
 	public void setPreguntas(HashMap<String, HashMap<Opcion, HashMap<String,String>>> preguntas) {
@@ -135,7 +132,7 @@ public class VentanaCrearQuizMultiple extends JFrame implements ActionListener {
 	public void mostrarVentanaAgregarPreguntas() {
 		if( ventanaAgregarPreguntas == null || ! ventanaAgregarPreguntas.isVisible( ) )
 		{
-			ventanaAgregarPreguntas = new VentanaAgregarPreguntas(this);
+			ventanaAgregarPreguntas = new VentanaAgregarPreguntasMultiples(this);
 			ventanaAgregarPreguntas.setVisible(true);
 		}
 	}
