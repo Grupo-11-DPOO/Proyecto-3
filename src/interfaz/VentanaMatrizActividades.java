@@ -219,5 +219,4 @@ class YearlyActivityPanel extends JPanel {
         else return new Color(50, 170, 50);
     }
 
-
 }

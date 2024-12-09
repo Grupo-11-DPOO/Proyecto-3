@@ -30,6 +30,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private VentanaClonar ventanaClonar;
 	private VentanaAgregarResenaORating ventanaAgregarRating;
 	private VentanaVerYEditarActividades ventanaVerYEditarActividad;
+	private VentanaVerEstadisticas ventanaVerEstadisticas;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear actividad";
@@ -152,8 +153,10 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         }
 	}
 	public void verEstadisticas() {
-		JOptionPane.showMessageDialog(this,"La ventana de ver Estadisticas no esta funcionando en estos momentos...\n"
-				+ " espera a nuestras proximas actualizaciones para disfrutar de esta función.");
+		if(ventanaVerEstadisticas == null || !ventanaVerEstadisticas.isVisible()) {
+			ventanaVerEstadisticas = new VentanaVerEstadisticas();
+			ventanaVerEstadisticas.setVisible(true);
+		}
 			
 	}
 
