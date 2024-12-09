@@ -21,9 +21,9 @@ import actividades.Tarea;
 import actividades.TipoActividades;
 import usuarios.Estudiante;
 
+@SuppressWarnings("serial")
 public class VentanaCompletarActividad extends JFrame {
 	
-	private static final long serialVersionUID = 1L;
 	private Estudiante estudiante;
 	private Actividad actividad;
 	private JTextArea detallesArea;
@@ -94,11 +94,11 @@ public class VentanaCompletarActividad extends JFrame {
                 VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
             }
 		 else if (tipoAct == TipoActividades.Recurso) {
-		Recurso recurso = (Recurso) actividad;
-		labelCalificacion.setText("Estado de la Actividad: Exitosa" );
-		estudiante.getRegistroActividades().put(actividad.getId(), Estado.EXITOSA);
-		VentanaPrincipal.sistemaRegistro.guardarActividad(recurso);
-		VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+			Recurso recurso = (Recurso) actividad;
+			labelCalificacion.setText("Estado de la Actividad: Exitosa" );
+			estudiante.getRegistroActividades().put(actividad.getId(), Estado.EXITOSA);
+			VentanaPrincipal.sistemaRegistro.guardarActividad(recurso);
+			VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 		 }
 		 
 		 else if (tipoAct == TipoActividades.Tarea) {
@@ -109,6 +109,8 @@ public class VentanaCompletarActividad extends JFrame {
 			VentanaPrincipal.sistemaRegistro.guardarActividad(tarea);
 			VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 		 }
+		estudiante.finalizarActividad();
+		VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 	}
 			
         	
@@ -143,9 +145,13 @@ public class VentanaCompletarActividad extends JFrame {
         		
         		Quiz quiz = (Quiz) actividad;
         		panelContenido.add(quiz.getContenido());
+        	}
+        	if ( tipoAct == TipoActividades.Recurso) {
+        		Recurso recurso = (Recurso) actividad;
+        		panelContenido.add(recurso.getContenido());
+        		
+        	}
         	
-        	
-        }
         	if (tipoAct == TipoActividades.QuizVerdad) {
                 QuizVerdad quizVF = (QuizVerdad) actividad;
                 panelContenido.add(quizVF.getContenido());
@@ -165,7 +171,7 @@ public class VentanaCompletarActividad extends JFrame {
 		JPanel panelInfo = new JPanel(new GridLayout(5,1));
 		panelInfo.add(new JLabel("Título: "+act.getTitulo()));
 		panelInfo.add(new JLabel("Descripción: "+ act.getDescripcion()));
-		panelInfo.add(new JLabel("Objetivo:"+ act.getObjetivo()));
+		panelInfo.add(new JLabel("Objetivo: "+ act.getObjetivo()));
 		panelInfo.add(new JLabel("Duración: "+act.getDuracionMinutos()));
 		panelInfo.add(new JLabel("Nivel: "+act.getNivel()));
 		add(panelInfo,BorderLayout.NORTH);

@@ -66,17 +66,13 @@ public class VentanaIniciarActividad extends JFrame {
 		listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		add(new JScrollPane(listaActividades),BorderLayout.WEST);
 		listaActividades.setEnabled(true);
-		System.out.println(this.learningPath.getListaActividades());
 		listaActividades.addListSelectionListener(e ->{
 			
 			if(!e.getValueIsAdjusting()) {
-				
 				Actividad actividadSeleccionada = listaActividades.getSelectedValue();
-				
 				if(actividadSeleccionada != null) {
 					mostrarDetalles(actividadSeleccionada);
 					agregarButton.setEnabled(true);
-					
 				}
 				else {
 					agregarButton.setEnabled(false);
@@ -90,6 +86,7 @@ public class VentanaIniciarActividad extends JFrame {
 				estudiante.setActividadEnCurso(actividadSeleccionada);
 				VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 				JOptionPane.showMessageDialog(this,"Actividad agregada con éxito y lista para iniciar","Éxito",JOptionPane.INFORMATION_MESSAGE);
+				this.dispose();
 			}
 		});
 	}

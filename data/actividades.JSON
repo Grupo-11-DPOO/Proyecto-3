@@ -89,7 +89,7 @@
         "tipoActividad": "Tarea",
         "objetivo": "fefsfe",
         "idActividadRealizar": "Debe poner un proyecto larguisimo para el domingo de semana 17",
-        "respuestas": {},
+        "respuestas": {"Camila": "correo"},
         "resenas": [],
         "duracionMinutos": 454,
         "id": "fbfc049f-8dbe-43ca-bb9a-8a3bfc013b13",
@@ -99,8 +99,8 @@
         "descripcion": "fesfsfsef",
         "calificacionMinima": 75,
         "respuestasCorrectas": ["A"],
-        "rating": 0,
-        "cantidadRating": 0,
+        "rating": 1,
+        "cantidadRating": 1,
         "titulo": "fesfsefse",
         "obligatorio": false,
         "prerrequisitos": [{
@@ -123,7 +123,7 @@
         "tipoActividad": "Quiz",
         "objetivo": "fsefsefseffse",
         "respuestasEstudiantes": {},
-        "resenas": [],
+        "resenas": ["horrible"],
         "duracionMinutos": 4,
         "preguntas": {"cual no es un pais": {
             "A": {"fortnite": "es un juego"},
@@ -233,7 +233,7 @@
         "tiempoLimite": "Sun Dec 08 19:52:52 COT 2024",
         "tipoActividad": "Encuesta",
         "objetivo": "rre",
-        "respuestas": {},
+        "respuestas": {"Camila": ["no, la verdad trabajar en grupo es muy dificil"]},
         "resenas": [],
         "duracionMinutos": 6,
         "preguntas": ["Se siente satisfecho con el semestre?"],
@@ -250,7 +250,11 @@
         "tiempoLimite": "Sun Dec 08 19:54:23 COT 2024",
         "tipoActividad": "Examen",
         "objetivo": "aprender",
-        "respuestas": {},
+        "respuestas": {"Camila": [
+            "drgdgrd",
+            "gdgrdrgdrg",
+            "millos"
+        ]},
         "resenas": ["me gusta"],
         "duracionMinutos": 90,
         "preguntas": [
@@ -280,6 +284,83 @@
             "mejor equipo del futbol colombiano"
         ],
         "id": "5108771a-eba2-406b-914b-a2ddcc939561",
+        "nivel": "Intermedio"
+    },
+    {
+        "descripcion": "gsegsegsegse",
+        "calificacionMinima": 60,
+        "respuestasCorrectas": [
+            "A",
+            "A",
+            "B"
+        ],
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "Quiz varias preguntas",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 22:54:30 COT 2024",
+        "tipoActividad": "Quiz",
+        "objetivo": "gergsegs",
+        "respuestasEstudiantes": {},
+        "resenas": [],
+        "duracionMinutos": 5,
+        "preguntas": {
+            "CACA": {
+                "A": {"NOOO": "si"},
+                "B": {"si": "sai"},
+                "C": {"escoja ests": "djdiw"},
+                "D": {"dmwmdiw": "mdwidmiwd"}
+            },
+            "prewgunta 3": {
+                "A": {"holiii": "eisfjsif"},
+                "B": {"correcta": "ijufuhbsueifs"},
+                "C": {"no ": "no"},
+                "D": {"mu": "no"}
+            },
+            "escoja la opcion a": {
+                "A": {"correctaaa": "fefsfs"},
+                "B": {"siii": "fefefe"},
+                "C": {"fefewf": "fefe"},
+                "D": {"fefefefefefefe": "3454"}
+            }
+        },
+        "id": "8304c7b3-5427-4eea-8661-d22ddd6fe4e7",
+        "nivel": "Avanzado"
+    },
+    {
+        "descripcion": "gegsgse",
+        "calificacionMinima": 40,
+        "respuestasCorrectas": [
+            "A",
+            "B"
+        ],
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "quiz varias preguntas",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 23:39:49 COT 2024",
+        "tipoActividad": "Quiz",
+        "objetivo": "revisar si sirve",
+        "respuestasEstudiantes": {},
+        "resenas": [],
+        "duracionMinutos": 7,
+        "preguntas": {
+            "capital de colombia": {
+                "A": {"cali": "no ois"},
+                "B": {"bogota": "siii"},
+                "C": {"med": "neverland"},
+                "D": {"baq": "ajaa"}
+            },
+            "Mejor equipo de futbol": {
+                "A": {"Millos": "obvio"},
+                "B": {"santafe": "jamas"},
+                "C": {"nacional": "neverland"},
+                "D": {"junior": "tu papa pero no"}
+            }
+        },
+        "id": "d1dd213d-841d-42a4-8a1c-98440446b930",
         "nivel": "Intermedio"
     }
 ]

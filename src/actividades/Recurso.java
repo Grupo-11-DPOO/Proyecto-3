@@ -5,8 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import usuarios.Estudiante;
-
 public class Recurso extends Actividad{
 
 	private String material;

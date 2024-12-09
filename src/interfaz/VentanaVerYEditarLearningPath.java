@@ -73,7 +73,7 @@ public class VentanaVerYEditarLearningPath extends JFrame implements ActionListe
         // Termina de configurar la ventana
         setTitle( "Ver y Editar Learning Paths");
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 800, 400 );
+        setSize( 600, 400 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );

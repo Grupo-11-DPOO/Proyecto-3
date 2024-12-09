@@ -77,7 +77,11 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 		botonSalir.addActionListener(this);
 		botonSalir.setActionCommand(EXIT);
 		panelBotones.add(botonSalir);
-		
+		// Usuario
+		JPanel panelNombre = new JPanel();
+		JLabel labelEstudiante = new JLabel("Bienvenid@ "+estudianteActual.getLogin()+"   ");
+		panelNombre.add(labelEstudiante);
+		add(panelNombre, BorderLayout.EAST);
 		add(titulo, BorderLayout.NORTH);
 		add(panelBotones, BorderLayout.WEST);
 		
@@ -90,9 +94,13 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 	}
 	
 	public void verOfertaLP() {
-		if(verOfertaVentana == null || !verOfertaVentana.isVisible()) {
-			verOfertaVentana = new VentanaVerOfertaLearningPath(this.estudianteActual);
-			verOfertaVentana.setVisible(true);
+		if (estudianteActual.getLearningPathEnCurso() != null) {
+			JOptionPane.showMessageDialog(this,"Ya tiene un Learning Path en curso!");
+		} else {
+			if(verOfertaVentana == null || !verOfertaVentana.isVisible()) {
+				verOfertaVentana = new VentanaVerOfertaLearningPath(this.estudianteActual);
+				verOfertaVentana.setVisible(true);
+			}
 		}
 	}
 	
@@ -100,14 +108,15 @@ public class VentanaMenuEstudiante extends JFrame implements ActionListener{
 		
 		if(estudianteActual.getLearningPathEnCurso()== null) {
 			JOptionPane.showMessageDialog(this,"Por favor, seleccione un LearningPath antes de iniciar una actividad");
-			
-		} else if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible()) {
+		} else if (estudianteActual.getActividadEnCurso() != null){
+			JOptionPane.showMessageDialog(this,"Ya tiene una actividad en curso");
+		} else if(ventanaIniciarActividad == null||!ventanaIniciarActividad.isVisible() ) {
 			ventanaIniciarActividad = new VentanaIniciarActividad(this.estudianteActual);
 			ventanaIniciarActividad.setVisible(true);
-		}
+		} 
 	}
 	public void completarActividad() {
-		if(estudianteActual.getLearningPathEnCurso()== null) {
+		if (estudianteActual.getLearningPathEnCurso()== null || estudianteActual.getActividadEnCurso() == null) {
 			JOptionPane.showMessageDialog(this,"No hay ninguna actividad en curso para completar.");
 			
 		} else if(ventanaCompletarActividad == null||!ventanaCompletarActividad.isVisible()) {
