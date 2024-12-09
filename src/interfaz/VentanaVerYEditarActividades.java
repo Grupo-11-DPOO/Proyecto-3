@@ -1,16 +1,21 @@
 package interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -18,48 +23,61 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import actividades.Actividad;
-import learningPaths.LearningPath;
+
 import usuarios.Profesor;
 
-@SuppressWarnings("serial")
-public class VentanaAgregarActividadesPropias extends JFrame implements ActionListener{
-	
+public class VentanaVerYEditarActividades extends JFrame implements ActionListener {
 	private Profesor profesorActual;
-	public int cantidad;
-	public int contador = 0;
-	private LearningPath learningPathActual;
-	private List<Actividad> listaActividadesPropias;
+	private JButton botonSi;
+	private JButton botonNo;
+	private static final String SI = "Si";
+	private static final String NO = "No";
 	private JPanel panelActividades;
-	private JButton botonAgregar;
-	private static final String AGREGAR = "Agregar actividad con ID";
-	private VentanaResenasActividadAgregar ventanaResenasActividadAgregar;
-
-
-	public VentanaAgregarActividadesPropias(Profesor profesorActual, int cantidad, LearningPath learningPathActual) {
+	private List<Actividad> listaActividadesPropias;
+	private VentanaEditarActividad ventanaEditarActividad;
+	
+	public VentanaVerYEditarActividades(Profesor profesorActivo) {
+		// TODO Auto-generated constructor stub
+		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		
-		this.profesorActual = profesorActual;
-		this.cantidad = cantidad;
-		this.learningPathActual = learningPathActual;
-		this.listaActividadesPropias = VentanaPrincipal.sistemaRegistro.getActividadesPropiasProfesor(this.profesorActual);
+		this.profesorActual = profesorActivo;
+		this.listaActividadesPropias = VentanaPrincipal.sistemaRegistro.getActividadesPropiasProfesor(profesorActual);
 		
+		// Titulo arriba
+		JLabel titulo = new JLabel("Lista Actividades");
+		titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+		add(titulo);
 		
-		setLayout( new BorderLayout());
+		// En el centro el panel con la info de los learning paths
+		add(mostrarPanelActividades());
 		
-		// Panel central con la información de todas las actividades del profesor propias
-		add(mostrarPanelActividades(), BorderLayout.CENTER);
+		// Abajo botones si y no sobre editar
 		
-		botonAgregar = new JButton(AGREGAR);
-		botonAgregar.addActionListener(this);
-		botonAgregar.setActionCommand(AGREGAR);
-		add(botonAgregar, BorderLayout.SOUTH);
+		botonSi = new JButton(SI);
+		botonSi.addActionListener(this);
+		botonSi.setActionCommand(SI);
+		botonNo = new JButton(NO);
+		botonNo.addActionListener(this);
+		botonNo.setActionCommand(NO);
+		
+		JPanel botones = new JPanel();
+		botones.setLayout(new BorderLayout());
+		JLabel tituloOpciones = new JLabel("¿Desea editar algúna actividad?");
+		tituloOpciones.setHorizontalAlignment(JLabel.CENTER);
+		botones.add(tituloOpciones, BorderLayout.NORTH);
+		botones.add(botonSi, BorderLayout.WEST);
+		botones.add(botonNo, BorderLayout.EAST);
+		add(botones);
+		
 		
         // Termina de configurar la ventana
-        setTitle( "Agregar actividad propia a LearningPath" );
+        setTitle( "Ver y Editar Actividades");
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 800, 500 );
+        setSize( 800, 400 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
+		
 	}
 	
 	public JPanel mostrarPanelActividades() {
@@ -67,7 +85,8 @@ public class VentanaAgregarActividadesPropias extends JFrame implements ActionLi
         String[] columnas = { "ID", "Título", "Objetivo", "Descripción", "Nivel", "Duración (min)", "Obligatorio", "Rating", "Tipo Actividad" };
 
         // Modelo de la tabla
-        DefaultTableModel modelo = new DefaultTableModel(columnas, 0){
+        @SuppressWarnings("serial")
+		DefaultTableModel modelo = new DefaultTableModel(columnas, 0){
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false; 
@@ -124,34 +143,32 @@ public class VentanaAgregarActividadesPropias extends JFrame implements ActionLi
 		return panelActividades;
 	}
 	
-	public void mostrarVentanaResenasActividadAgregar(String idActividad) {
+	public void mostrarVentanaEditar(String idActividad) {
 		// Crea una ventana donde se miran las reseñas de la actividad
 		Actividad actividad = profesorActual.getActividadById(idActividad);
 		if (actividad != null) {
-			if( ventanaResenasActividadAgregar== null || !ventanaResenasActividadAgregar.isVisible( ) )
+			if( ventanaEditarActividad== null || !ventanaEditarActividad.isVisible( ) )
 	        {
-	        	ventanaResenasActividadAgregar = new VentanaResenasActividadAgregar(this, learningPathActual, actividad);
-	        	ventanaResenasActividadAgregar.setVisible(true);
+				ventanaEditarActividad = new VentanaEditarActividad(this, actividad, profesorActual);
+				ventanaEditarActividad.setVisible(true);
+				this.dispose();
 	        }
 		} else {
 			JOptionPane.showMessageDialog(this,  "No existe una actividad con ese ID", "ID incorrecto", JOptionPane.ERROR_MESSAGE);			
 		}
 	}
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String comando = e.getActionCommand( );
-        if( comando.equals( AGREGAR ) )
+		// TODO Auto-generated method stub
+		String comando = e.getActionCommand();
+		if( comando.equals( SI ) )
         {
-        	if (contador < cantidad) {
-        		String idActividad = JOptionPane.showInputDialog("Ingrese el ID de la actividad a agregar:");
-        		learningPathActual.agregarActividad(profesorActual.getActividadById(idActividad));
-        		mostrarVentanaResenasActividadAgregar(idActividad);
-        	} else {
-        		JOptionPane.showMessageDialog(this,  "Se excedió del número de actividades a agregar", "Cantidad incorrecta", JOptionPane.ERROR_MESSAGE);
-        		this.dispose();
-        	}
+        	String idActividad = JOptionPane.showInputDialog("Ingrese el ID de la actividad a editar");
+        	mostrarVentanaEditar(idActividad);
+        } else if (comando.equals(NO)) {
+        	this.dispose();
         }
+		
 	}
 
 }

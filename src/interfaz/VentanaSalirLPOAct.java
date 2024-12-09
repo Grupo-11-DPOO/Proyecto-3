@@ -37,7 +37,7 @@ public class VentanaSalirLPOAct extends JFrame implements ActionListener{
 		// TODO Auto-generated constructor stub
 		setTitle( "Salir Learning Path o Actividad" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 200, 300 );
+        setSize( 300, 300 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
@@ -58,8 +58,10 @@ public class VentanaSalirLPOAct extends JFrame implements ActionListener{
 		String comando = e.getActionCommand();
 		if(comando.equals(LP)) {
 			salirLP();
+			this.dispose();
 		} else if(comando.equals(ACT)) {
 			salirActi();
+			this.dispose();
 		}
 		
 	}
