@@ -26,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 import learningPaths.LearningPath;
 import usuarios.Estudiante;
 
+@SuppressWarnings("serial")
 public class VentanaMostrarLPStats extends JFrame implements ActionListener{
 	private JButton botonLP;
 	
