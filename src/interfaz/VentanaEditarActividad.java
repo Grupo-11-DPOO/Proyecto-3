@@ -4,15 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import actividades.Actividad;
-import learningPaths.LearningPath;
 import usuarios.Profesor;
 
 @SuppressWarnings("serial")
@@ -32,7 +29,6 @@ public class VentanaEditarActividad extends JFrame implements ActionListener{
 	private Profesor profesorActual;
 	
 	public VentanaEditarActividad(VentanaVerYEditarActividades papa, Actividad activ, Profesor profesorActivo) {
-		// TODO Auto-generated constructor stub
 		setLayout( new BorderLayout());
 		panelBotones = new JPanel(new GridLayout(4,1));
 		this.profesorActual = profesorActivo;

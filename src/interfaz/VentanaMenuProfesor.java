@@ -4,11 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import usuarios.Profesor;
 
@@ -184,7 +182,6 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         } else if (comando.equals(SALIR)) {
         	System.exit(0);
         }
-        //TODO terminar de configurar las otras ventanas
 	}
 	
 	

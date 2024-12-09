@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -23,13 +22,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 public class VentanaMatrizActividades extends JFrame {
-    
-    /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private JMenuBar menuBar;
     private JPanel leftPanel;
@@ -161,6 +156,7 @@ public class VentanaMatrizActividades extends JFrame {
 }
 
 
+@SuppressWarnings("serial")
 class YearlyActivityPanel extends JPanel {
     private Map<LocalDate, Integer> data;
     private int cellSize = 15; 
