@@ -8,8 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -26,6 +24,7 @@ import actividades.Actividad;
 
 import usuarios.Profesor;
 
+@SuppressWarnings("serial")
 public class VentanaVerYEditarActividades extends JFrame implements ActionListener {
 	private Profesor profesorActual;
 	private JButton botonSi;
@@ -37,7 +36,6 @@ public class VentanaVerYEditarActividades extends JFrame implements ActionListen
 	private VentanaEditarActividad ventanaEditarActividad;
 	
 	public VentanaVerYEditarActividades(Profesor profesorActivo) {
-		// TODO Auto-generated constructor stub
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		
 		this.profesorActual = profesorActivo;
@@ -85,7 +83,6 @@ public class VentanaVerYEditarActividades extends JFrame implements ActionListen
         String[] columnas = { "ID", "Título", "Objetivo", "Descripción", "Nivel", "Duración (min)", "Obligatorio", "Rating", "Tipo Actividad" };
 
         // Modelo de la tabla
-        @SuppressWarnings("serial")
 		DefaultTableModel modelo = new DefaultTableModel(columnas, 0){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -159,7 +156,6 @@ public class VentanaVerYEditarActividades extends JFrame implements ActionListen
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		String comando = e.getActionCommand();
 		if( comando.equals( SI ) )
         {

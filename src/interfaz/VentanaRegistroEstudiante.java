@@ -79,7 +79,7 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
         // Termina de configurar la ventana
         setTitle( "Registro Estudiantes" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 300, 250 );
+        setSize( 300, 260 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );

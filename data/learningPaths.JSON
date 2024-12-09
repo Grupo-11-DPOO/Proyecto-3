@@ -1,0 +1,21 @@
+[{
+    "descripcion": "aprender",
+    "fechaModificacion": "2024-12-08T23:40:09.015836300",
+    "rating": 0.5,
+    "titulo": "Learning Path HOLA",
+    "fechaCreacion": "2024-12-08T21:31:50.700341400",
+    "duracion": 575,
+    "id": "3a4d72dd-e8ea-4113-919e-7ece965f6d3f",
+    "actividades": [
+        "a09b01f7-719c-4078-b509-561ec4b001fc",
+        "4b72e005-7e81-4892-bf5f-f1532827b100",
+        "e09a93ed-ef1b-4ac4-bbbb-310e723320b0",
+        "df40ba31-ff2f-45ea-8689-33c68456649f",
+        "fbfc049f-8dbe-43ca-bb9a-8a3bfc013b13",
+        "24a73b21-bf8b-4593-9165-b0e5fc814522",
+        "8304c7b3-5427-4eea-8661-d22ddd6fe4e7",
+        "d1dd213d-841d-42a4-8a1c-98440446b930"
+    ],
+    "nivel": "Intermedio",
+    "version": 17
+}]

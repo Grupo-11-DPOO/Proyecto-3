@@ -23,6 +23,7 @@ public class VentanaCrearLearningPath extends JFrame implements ActionListener{
 	private JButton botonCrear;
 	private static final String CREAR = "Crear";
 	private VentanaAgregarActividadesPropias ventanaAgregarActividadesPropias;
+	private VentanaCrearActividad ventanaCrearActividad;
 
 
 	public VentanaCrearLearningPath(Profesor profesorActual) {
@@ -56,13 +57,13 @@ public class VentanaCrearLearningPath extends JFrame implements ActionListener{
 		botonCrear = new JButton(CREAR);
 		botonCrear.addActionListener(this);
 		botonCrear.setActionCommand(CREAR);
-		botonCrear.setBounds(75, 110,80, 25);
+		botonCrear.setBounds(95, 115,80, 25);
 		add(botonCrear);
 		
         // Termina de configurar la ventana
         setTitle( "Crear Learning Path" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 300, 300 );
+        setSize( 300, 190 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
@@ -123,10 +124,16 @@ public class VentanaCrearLearningPath extends JFrame implements ActionListener{
                 break;
             case 1: 
             	// Crear actividad
-                // TODO
-            	// Cuando la llama dentro de ese menu esta la opcion para agregar al learningPath
-            	
+                mostrarVentanaCrearActividad();
                 break;
+        }
+	}
+	
+	public void mostrarVentanaCrearActividad() {
+		if( ventanaCrearActividad== null || !ventanaCrearActividad.isVisible( ) )
+        {
+        	ventanaCrearActividad = new VentanaCrearActividad(profesorActual);
+        	ventanaCrearActividad.setVisible( true );
         }
 	}
 	

@@ -2,16 +2,13 @@ package interfaz;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import usuarios.Profesor;
-
+@SuppressWarnings("serial")
 public class VentanaVerEstadisticas extends JFrame implements ActionListener {
-	private Profesor profesorActual;
 	private JButton botonMatriz;
 	private JButton botonEstudiantes;
 	private JButton botonLP;
@@ -45,8 +42,6 @@ public class VentanaVerEstadisticas extends JFrame implements ActionListener {
 		add(botonLP);
 		add(botonEstudiantes);
 		
-		
-		// TODO Auto-generated constructor stub
 		setTitle( "Ver Estadisticas");
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
         setSize( 300, 200 );
@@ -75,7 +70,6 @@ public class VentanaVerEstadisticas extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		String comando = e.getActionCommand();
 		if(comando.equals(MATRIZ)) {
 			mostrarMatriz();

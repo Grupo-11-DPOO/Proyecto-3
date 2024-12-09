@@ -17,7 +17,7 @@ public class Examen extends Actividad{
 	
 	private List<String> preguntas;	
 	private HashMap<String, ArrayList<String>> respuestasDeTodos;
-	private List<JTextArea> areasRespuestas;
+	private List<JTextArea> areasRespuestas = new ArrayList<>();;
 
 	public Examen(String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos,
 			boolean obligatorio) {
@@ -83,7 +83,6 @@ public class Examen extends Actividad{
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-		List<JTextArea> areasRespuestas = new ArrayList<>();
 		for(int i=0; i<preguntas.size();i++) {
 			String pregunta= preguntas.get(i); 
 			
@@ -109,18 +108,10 @@ public class Examen extends Actividad{
 		for (int i = 0; i< preguntas.size(); i++) {
 			String respuesta = areasRespuestas.get(i).getText().toLowerCase();
 			respuestas.add(respuesta);
-			
 		}
-		
 		respuestasDeTodos.put(login, respuestas);
-		
 	}
-		
-		
-		
-		
-		
-	
+
 	@Override
 	public Examen clone() {
 		Examen copia = (Examen) super.clone();

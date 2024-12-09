@@ -17,7 +17,7 @@ public class Encuesta extends Actividad{
 	
 	private ArrayList<String> preguntas;
 	private HashMap<String, ArrayList<String>> respuestasDeTodos;
-	private List<JTextArea> areasRespuestas;
+	private List<JTextArea> areasRespuestas = new ArrayList<>();
 	public Encuesta(String titulo, String objetivo, String descripcion, String nivel, int duracionMinutos,
 			boolean obligatorio) {
 		super(titulo, objetivo, descripcion, nivel, duracionMinutos, obligatorio);
@@ -81,7 +81,6 @@ public class Encuesta extends Actividad{
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-		List<JTextArea> areasRespuestas = new ArrayList<>();
 		for(int i=0; i<preguntas.size();i++) {
 			String pregunta= preguntas.get(i); 
 			
@@ -107,8 +106,8 @@ public class Encuesta extends Actividad{
 		for (int i = 0; i< preguntas.size(); i++) {
 			String respuesta = areasRespuestas.get(i).getText().toLowerCase();
 			respuestas.add(respuesta);
-			
 		}
+		respuestasDeTodos.put(login, respuestas);
 	}
 	
 	

@@ -39,6 +39,7 @@ public class Tarea extends Actividad{
 		return Estado.ENVIADA;	
 	}
     public JPanel getContenido() {
+    	areaEntrega = new JTextArea();
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 

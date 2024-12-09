@@ -21,7 +21,7 @@ import learningPaths.LearningPath;
 
 public class Estudiante extends Usuario {
 	private Actividad actividadEnCurso;
-	private LearningPath learningPathEnCurso; //Lista con los learningPaths en curso, donde se almacenan sus id
+	private LearningPath learningPathEnCurso; 
 	private HashMap<String, Estado> registroActividades; //llave idActividades, valor Estado
 	private HashMap<String, Double> registroLearningPaths; //llave idLearningPaths, valor double del progeso 0 a 1
 	private List<String> intereses;

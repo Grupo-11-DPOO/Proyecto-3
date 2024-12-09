@@ -66,7 +66,7 @@ public class VentanaResenasActividadAgregar extends JFrame implements ActionList
         // Termina de configurar la ventana
         setTitle( "Ver reseñas para agregar actividad" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 800, 900 );
+        setSize( 500, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );

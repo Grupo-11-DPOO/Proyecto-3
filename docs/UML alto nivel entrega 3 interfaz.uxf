@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1398</x>
+      <y>90</y>
+      <w>84</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JPanel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1686</x>
+      <y>108</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>ActionListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1302</x>
+      <y>114</y>
+      <w>108</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1218</x>
+      <y>198</y>
+      <w>156</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>PanelBotones
+--
+_+INICIAR:STRING_
+_+REGISTRARSE:STRING_
+_-ventanaPrincipal:VentanaPrincipal_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1332</x>
+      <y>126</y>
+      <w>366</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;590.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1494</x>
+      <y>192</y>
+      <w>252</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>VentanaPrincipal
+--
+-sistemaRegistro:SistemaRegistro
+-datosProfesor:HashMap&lt;String,Estudiante&gt;
+-datosEstudiante:HashMap&lt;String,Estudiante&gt;
+-actividades:HashMap&lt;String,Actividad&gt;
+-learnignPaths:HashMap&lt;String,LearningPath&gt;
+ventanaRegistroProfesores:VentanaRegistroProfesores
+-ventanaRegistroEstudiantes:VentanaRegistroEstudiantes
+-ventanaMenuEstudiante:VentanaMenuEstudiante
+-pIngreso:PanelIngreso
+-pBonotes:PanelBotones
+-matriz:VentanaMatrizActividades</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1368</x>
+      <y>222</y>
+      <w>138</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1482</x>
+      <y>0</y>
+      <w>144</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PanelIngreso
+--
+-txtUsuario:JtextField
+-txtPassWord:JPasswordField
+-readioProfesor:JRadioButton
+-radioEstudiante:JRadioButton
+-grupoOpciones:ButtonGroup
+_-PROFESOR:String_
+_-Estudiante:String_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>0</y>
+      <w>90</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>12</y>
+      <w>78</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1122</x>
+      <y>282</y>
+      <w>276</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarActividadesPropias
+--
+-profesorActial:Profesor
+-cantidad:int
+-contador:int
+-learningPathActual:LearningPath
+-listaActividadesPropias: List&lt;Actividad&gt;
+-panelActividades:JPanel
+-botonAgregar:JButton
+-ventanaResenasActividadAgregar:VentanasResenasActividadAgregar
+_-AGREGAR:String_
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>90</y>
+      <w>114</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>114</y>
+      <w>30</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;280.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>126</y>
+      <w>528</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;20.0;860.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>234</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Profesor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>282</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>LearningPath</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>330</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Actividad</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>942</x>
+      <y>234</y>
+      <w>192</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>942</x>
+      <y>288</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>942</x>
+      <y>330</y>
+      <w>192</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;300.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>720</y>
+      <w>180</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarPreguntasAbiertas
+--
+-ventanaPadreExamen: VentanaCrearExamen
+-ventanaPadreEncuesta:VentanaCrearEncuesta
+-preguntas:ArrayList&lt;String&gt;
+-agregarPregunta:jButton
+-volver:JButton
+-txtEnunciado:JtextArea</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>420</y>
+      <w>252</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearExamen
+--
+-profesorActual:Profesor
+-titulo:String
+-objetivo:String
+-descripcion:String
+-nivel String
+-duracionMinutos:int
+-obligatorio:boolean
+-chkPreRequisitos:JChechBox
+-botonAgregarPreguntas:JButton
+-botonCrear:JButton
+-ventanaPrerequisitos:VentanaPrerequisitos
+-examen:Examen
+-preguntas:List&lt;String&gt;
+-ventanaAgregarPreguntas:VentanaAgregarPreguntas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>408</y>
+      <w>270</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearEncuesta
+--
+-profesorActual:Profesor
+-titulo:String
+-objetivo:String
+-descripcion:String
+-nivel String
+-duracionMinutos:int
+-obligatorio:boolean
+-chkPreRequisitos:JChechBox
+-botonAgregarPreguntas:JButton
+-botonCrear:JButton
+-ventanaPrerequisitos:VentanaPrerequisitos
+-encuesta:Encuesta
+-preguntas:List&lt;String&gt;
+-ventanaAgregarPreguntas:VentanaAgregarPreguntas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1062</x>
+      <y>564</y>
+      <w>102</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;260.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>600</y>
+      <w>90</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>714</y>
+      <w>414</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarPreguntasMultiples
+--
+-preguntas:HashMap&lt;String,HashMap&lt;Opcion,HashMap&lt;String,String&gt;&gt;&gt;
+-respuestasCorrectas:ArrayList&lt;Opcion&gt;
+-ventanaPadre:VentanaCrearQuizMultiple
+-txtEnunciado:JTextField
+-txtOpcionA:JTextField
+-txtOpcionB:JTextField
+-txtOpcionC:JtextField
+-txtOpcionD:JTextField
+-txtExplicacionA:JTextField
+-txtExplicacionB:JTextField
+-txtExplicacionC:JTextField
+-txtExpliaccionD:JTextField
+-radioOpcionA:JRadioButton
+-radioOpcionB:JRadioButton
+-radioOpcionC:JRadioButton
+-radioOpcionD:JRadioButton
+-grupoOpciones:ButtoGroup
+-agregarPregunta:JButton
+-volver:JButton
+_-A:String_
+_-B:String_
+_-C:String_
+_-D:String_
+_-AGREGARPREGUNTA:STRING_
+_-VOLVER:STRING_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>1026</y>
+      <w>462</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearQuizMultiple
+--
+-profesorActual:Profesor
+-titulo:String
+-objetivo:String
+-descripcion:String
+-nivel:String
+-duracionMinutos:int
+-obligatorio:boolean
+-chkPreRequisitos:JChechBox
+-botonAgregarPreguntas:Jbutton
+-botonCrear:JButton
+-txtCalificacionMinima:JTextField
+-ventanaPrerequisitos:VentanaPrerequisitos
+-quizMultiple:Quiz
+-preguntas:HashMap&lt;String,HashMap&lt;Opcion,HashMap&lt;String,String&gt;&gt;&gt;
+-respuestasCorrectas:ArrayList&lt;Opcion&gt;
+-ventanaAgregarPreguntas:VentanaAgregarPreguntas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>978</y>
+      <w>42</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>810</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Opcion
+&lt;Enum&gt;
+--
+A
+B
+C
+D</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>792</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;100.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>114</y>
+      <w>306</w>
+      <h>612</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1000.0;30.0;10.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>120</y>
+      <w>918</w>
+      <h>606</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;990.0;50.0;20.0;1510.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>294</x>
+      <y>372</y>
+      <w>228</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarPreguntas
+--
+-ventanaPadre:VentanaCrearQuiz
+-agregarPregunta:JButton
+-volver.JButton
+-txtEnunciado:JTextField
+-radioVerdadero:JRadioButton
+-radioFalso:JRadioButton
+-grupoOpciones:buttonGroup
+-preguntas:ArrayList&lt;Strint&gt;
+-respuestasCorrectas:ArrayList&lt;VerdaderoFalso&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>90</y>
+      <w>522</w>
+      <h>366</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;590.0;170.0;460.0;850.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>114</y>
+      <w>1182</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;520.0;510.0;50.0;1950.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>294</x>
+      <y>516</y>
+      <w>222</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearQuizVF
+--
+-profesorActual:Profesor
+-titulo:String
+-objetivo:String
+-descripcion:String
+-nivel:String
+-duracionMinutos:int
+-obligatorio:boolean
+-chkPreRequisitos:JChechBox
+-botonAgregarPreguntas:Jbutton
+-botonCrear:JButton
+-txtCalificacionMinima:JTextField
+-quizVF:QuizVerdad
+-preguntas:ArrayList&lt;String&gt;
+-respuestasCorrectas:ArrayList&lt;VerdaderoFalso&gt;
+-ventanaPrerequisitos:VentanaPrerequisitos
+-ventanaAgregarPreguntas:VentanaAgregarPreguntas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>474</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>402</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>VerdaderoFalso
+&lt;Enum&gt;
+--
+Verdadero
+Falso</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>246</x>
+      <y>432</y>
+      <w>60</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1896</x>
+      <y>162</y>
+      <w>180</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarPrerequisitos
+--
+-actividad: Actividad
+-profesorActual:Profesor
+-panelActividades:JPanel
+-botongAgregar:JButton
+-botonCerrar:JButton
+-listaActividades:Colection&lt;Actividad&gt;
+_-AGREGAR:String_
+_CERRAR:String_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1752</x>
+      <y>126</y>
+      <w>156</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>240.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>102</y>
+      <w>774</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1270.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2214</x>
+      <y>144</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Profesor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2208</x>
+      <y>216</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Actividad</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>144</y>
+      <w>156</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;90.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>216</y>
+      <w>150</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1896</x>
+      <y>288</y>
+      <w>180</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>VentanaAgregarResenaRating
+--
+-agregarButton:JButton
+-agregarRating:JButton
+-listaPaths:JList&lt;Actividad&gt;
+-detallesArea:JTextArea
+_-RESENA:String_
+_-RATING:String_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2160</x>
+      <y>438</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>JFrame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>360</y>
+      <w>102</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1746</x>
+      <y>126</y>
+      <w>162</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>250.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1740</x>
+      <y>324</y>
+      <w>168</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>228</y>
+      <w>156</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;100.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1872</x>
+      <y>414</y>
+      <w>150</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>VentanaClonar
+--
+-profesorActual:Profesor
+-panelActividades:JPanel
+-botonClonar:JButton
+-listaActividades:Collection&lt;Actividad&gt;
+_-CERRAR:String_
+_-CLONAR:String_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2016</x>
+      <y>432</y>
+      <w>150</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1734</x>
+      <y>126</y>
+      <w>150</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>230.0;490.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1740</x>
+      <y>330</y>
+      <w>144</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2016</x>
+      <y>156</y>
+      <w>210</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;430.0;210.0;340.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2016</x>
+      <y>228</y>
+      <w>222</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;420.0;230.0;240.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1506</x>
+      <y>468</y>
+      <w>150</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>VentanaCompletarActividad
+--
+-estudiante:Estudiante
+-actividad:Actividad
+-detallesArea:JTextArea
+-botonEnviar:JButton
+-labelCalificacion:JLabel
+-panelContenido:JPanel
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1644</x>
+      <y>450</y>
+      <w>546</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;890.0;160.0;890.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1722</x>
+      <y>444</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Estudiante</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1650</x>
+      <y>456</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;40.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1572</x>
+      <y>330</y>
+      <w>54</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;230.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1650</x>
+      <y>228</y>
+      <w>600</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;400.0;270.0;250.0;950.0;250.0;980.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>588</y>
+      <w>234</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearACtividad
+--
+-profesorActual:Profesor
+-niveles:String[]
+-botonRecurso:JButton
+-botonTarea:JButton
+-botonQuiz:JButton
+-botonExamen:JButton
+-botonEncuesta:JButton
+-botonQuizVerdadero:JButton
+-txtTitulo:JTextField
+-txtObjetivo:JTextField
+-txtDescripcion:JTextField
+-txtDuracion:JTextField
+-chkObligatorio:JChechBox
+-ventanaCrearRecurso:VentanaCrearRecurso
+-ventanaCrearTarea:VentanaCrearTarea
+-ventanaCrearQuizMultiple:VentanaCrearQuizMultiple
+-ventanaCrearExamen:VentanaCrearExamen
+-ventanaCrearEncuesta:VentanaCrearEncuesta
+-ventanaCrearTarea:VentanaCrearTarea
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1434</x>
+      <y>114</y>
+      <w>264</w>
+      <h>492</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;800.0;20.0;60.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>444</y>
+      <w>702</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;250.0;1150.0;250.0;1150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>150</y>
+      <w>780</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1280.0;10.0;1260.0;760.0;10.0;760.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>228</y>
+      <w>756</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;630.0;1230.0;620.0;1240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1236</x>
+      <y>564</y>
+      <w>54</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;70.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>996</x>
+      <y>600</y>
+      <w>288</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;70.0;20.0;460.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>576</y>
+      <w>774</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;880.0;140.0;1270.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>150</y>
+      <w>942</w>
+      <h>414</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1550.0;10.0;1530.0;670.0;10.0;670.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1368</x>
+      <y>426</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Encuesta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>432</y>
+      <w>42</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>372</y>
+      <w>576</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;940.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>252</y>
+      <w>564</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>920.0;10.0;830.0;280.0;10.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>234</y>
+      <w>852</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1400.0;10.0;1320.0;560.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>474</y>
+      <w>312</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;500.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>708</x>
+      <y>444</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Examen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>762</x>
+      <y>444</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1698</x>
+      <y>624</y>
+      <w>198</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>VentanaCrearLearninPath
+--
+-profesorActual:Profesor
+-txtTitulo:JTextField
+-txtObjetivo:JTextField
+-cbbNivel:JComboBox&lt;String&gt;
+-niveles:String[]
+-botonCrear:Jbutton
+-ventanaAgregarActividaddesPropias</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>156</y>
+      <w>390</w>
+      <h>510</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>620.0;10.0;630.0;770.0;10.0;830.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>384</y>
+      <w>318</w>
+      <h>282</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;140.0;300.0;510.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1914</x>
+      <y>618</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>LearningPath</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>612</y>
+      <w>36</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;30.0;40.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1848</x>
+      <y>450</y>
+      <w>366</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;290.0;450.0;100.0;590.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1752</x>
+      <y>126</y>
+      <w>66</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;820.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>876</y>
+      <w>114</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;170.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>414</y>
+      <w>372</w>
+      <h>624</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>600.0;1020.0;590.0;450.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>246</x>
+      <y>468</y>
+      <w>60</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;80.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>114</y>
+      <w>396</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>640.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
