@@ -29,6 +29,10 @@ import usuarios.Estudiante;
 
 public class VentanaCompletarActividad extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Estudiante estudiante;
 	private Actividad actividad;
 	private JTextArea detallesArea;
