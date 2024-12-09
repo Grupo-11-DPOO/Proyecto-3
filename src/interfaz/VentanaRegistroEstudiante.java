@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
 import exceptions.UsuarioExistenteException;
 
 @SuppressWarnings("serial")
@@ -17,7 +16,6 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
 	
 	
 	private static final String REGISTRAREST = "Registrar";
-	private VentanaPrincipal ventanaPrincipal;
 	private JTextField txtUsuario;
 	private JPasswordField txtPassword;
 	private JTextField interes1;
@@ -25,12 +23,9 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
 	private JTextField interes3;
 	private JButton confirmar;
 	
-	public VentanaRegistroEstudiante(VentanaPrincipal ventanaPadre) {
-		
-		ventanaPrincipal = ventanaPadre;
+	public VentanaRegistroEstudiante() {
 		
 		setLayout(null);
-		
 		
 		JLabel labelUsuario = new JLabel("Login: ");
 		labelUsuario.setBounds(10, 20, 80, 25);
@@ -80,9 +75,6 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
 		confirmar.addActionListener(this);
 		confirmar.setActionCommand(REGISTRAREST);
 		add(confirmar);
-				
-		
-		
 		
         // Termina de configurar la ventana
         setTitle( "Registro Estudiantes" );
@@ -129,7 +121,6 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
 		else {
 			JOptionPane.showMessageDialog(this, "No puede dejar los campos en blanco", "Campos inválidos", JOptionPane.OK_OPTION);
 		}
-		
 	}
 	
 	@Override
@@ -145,5 +136,4 @@ public class VentanaRegistroEstudiante extends JFrame implements ActionListener{
 			}
         }
     }
-	
 }

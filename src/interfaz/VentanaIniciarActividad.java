@@ -2,7 +2,6 @@ package interfaz;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -11,18 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
-
 import actividades.Actividad;
-import actividades.Recurso;
 import learningPaths.LearningPath;
 import usuarios.Estudiante;
 
 
 public class VentanaIniciarActividad extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JButton agregarButton;
 	private Estudiante estudiante;
@@ -30,9 +24,8 @@ public class VentanaIniciarActividad extends JFrame {
 	private JList<Actividad> listaActividades;
 	private JTextArea detallesArea;
 	
-	
 	public VentanaIniciarActividad(Estudiante estudiante){
-		// TODO Auto-generated constructor stub
+		
 		this.estudiante = estudiante;
 		setTitle( "Iniciar Actividad del Learning Path" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
@@ -40,8 +33,6 @@ public class VentanaIniciarActividad extends JFrame {
         
         this.learningPath = estudiante.getLearningPathEnCurso();
         
-        
-
         detallesArea = new JTextArea();
         detallesArea.setEditable(false);
         
@@ -51,22 +42,17 @@ public class VentanaIniciarActividad extends JFrame {
         setLayout(new BorderLayout());
         add(new JScrollPane(detallesArea),BorderLayout.CENTER);
         
-        
         JPanel buttonPanel = new JPanel();
         
         buttonPanel.add(agregarButton);
         add(buttonPanel,BorderLayout.SOUTH);
         
         if(learningPath== null) {
-        	
         	mostrarMensajeLearningPathNoSeleccionado();
         }
         else {
-        	
         	configurarComponentes();
-        	
         }
-           
 	}
 	
 	private void mostrarMensajeLearningPathNoSeleccionado() {
@@ -95,28 +81,20 @@ public class VentanaIniciarActividad extends JFrame {
 				else {
 					agregarButton.setEnabled(false);
 				}
-				
 			}
-			
 		});
 		
 		agregarButton.addActionListener(e ->{
-			
 			Actividad actividadSeleccionada = listaActividades.getSelectedValue();
 			if(actividadSeleccionada != null) {
 				estudiante.setActividadEnCurso(actividadSeleccionada);
 				VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
 				JOptionPane.showMessageDialog(this,"Actividad agregada con éxito y lista para iniciar","Éxito",JOptionPane.INFORMATION_MESSAGE);
-				
 			}
-			
-			
 		});
-		
 	}
 	
 	private void mostrarDetalles(Actividad act) {
-		
 		String detalles = "Titulo: "+act.getTitulo()+ "\n"+
 							"Descripción: "+act.getDescripcion()+ "\n"+
 							"Duración en minutos: "+ act.duracionMinutos+ "\n"+
@@ -128,7 +106,4 @@ public class VentanaIniciarActividad extends JFrame {
 							"Tiempo Limite: "+ act.getTiempoLimite();
 		detallesArea.setText(detalles);
 	}
-	
-	
-
 }

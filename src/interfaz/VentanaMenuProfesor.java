@@ -146,14 +146,12 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	public void verEstadisticas() {
 		JOptionPane.showMessageDialog(this,"La ventana de ver Estadisticas no esta funcionando en estos momentos...\n"
 				+ " espera a nuestras proximas actualizaciones para disfrutar de esta función.");
-			
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand( );
-        if( comando.equals( CREAR ) )
-        {
+        if (comando.equals(CREAR)) {
             crearLearningPath();
         } else if (comando.equals(VERYDITAR)) {
         	verYEditarLearningPath();
@@ -168,9 +166,5 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         } else if (comando.equals(SALIR)) {
         	System.exit(0);
         }
-        //TODO terminar de configurar las otras ventanas
 	}
-	
-	
-	
 }
