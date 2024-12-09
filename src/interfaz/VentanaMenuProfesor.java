@@ -29,6 +29,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private VentanaCrearActividad ventanaCrearActividad;
 	private VentanaClonar ventanaClonar;
 	private VentanaAgregarResenaORating ventanaAgregarRating;
+	private VentanaVerYEditarActividades ventanaVerYEditarActividad;
+	private VentanaVerEstadisticas ventanaVerEstadisticas;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear Actividad";
@@ -146,15 +148,26 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		}
 	}
 	
+	public void verYEditarActi() {
+		if( ventanaVerYEditarActividad == null || !ventanaVerYEditarActividad.isVisible( ) )
+        {
+        	ventanaVerYEditarActividad = new VentanaVerYEditarActividades(profesorActual);
+        	ventanaVerYEditarActividad.setVisible( true );
+        }
+	}
 	public void verEstadisticas() {
-		JOptionPane.showMessageDialog(this,"La ventana de ver Estadisticas no esta funcionando en estos momentos...\n"
-				+ " espera a nuestras proximas actualizaciones para disfrutar de esta función.");
+		if(ventanaVerEstadisticas == null || !ventanaVerEstadisticas.isVisible()) {
+			ventanaVerEstadisticas = new VentanaVerEstadisticas();
+			ventanaVerEstadisticas.setVisible(true);
+		}
+			
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand( );
-        if (comando.equals(CREAR)) {
+        if( comando.equals( CREAR ) )
+        {
             crearLearningPath();
         } else if (comando.equals(VERYDITAR)) {
         	verYEditarLearningPath();
@@ -166,8 +179,14 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	agregarResenaORating();
         } else if(comando.equals(VERSTATS)) {
         	verEstadisticas();
+        } else if(comando.equals(VERYEDITARACTI)) {
+        	verYEditarActi();
         } else if (comando.equals(SALIR)) {
         	System.exit(0);
         }
+        //TODO terminar de configurar las otras ventanas
 	}
+	
+	
+	
 }

@@ -59,8 +59,10 @@ public class VentanaSalirLPOAct extends JFrame implements ActionListener{
 		String comando = e.getActionCommand();
 		if(comando.equals(LP)) {
 			salirLP();
+			this.dispose();
 		} else if(comando.equals(ACT)) {
 			salirActi();
+			this.dispose();
 		}
 	}
 }
