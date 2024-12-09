@@ -28,9 +28,12 @@ public class VentanaAgregarResenaORating extends JFrame implements ActionListene
     public static final String RATING = "Agregar Rating";
 	public VentanaAgregarResenaORating() {
 		
-        setTitle("Oferta de Learning Paths");
-        setSize(800, 600);
+        setTitle("Oferta de Actividades");
+        setSize(600, 600);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo( null );
+        setVisible( true );
 
         ArrayList<Actividad> paths = new ArrayList<>(VentanaPrincipal.actividades.values());
 
@@ -76,6 +79,7 @@ public class VentanaAgregarResenaORating extends JFrame implements ActionListene
 	public void agregarResena(Actividad path) {
 		if(path != null) {
 			path.agregarResena(JOptionPane.showInputDialog("Ingrese una reseña para la actividad seleccionada: "));
+			VentanaPrincipal.sistemaRegistro.guardarActividad(path);
 		} else {
 			JOptionPane.showMessageDialog(this, "No hay ninguna actividad seleccionada.");
 		}
@@ -85,12 +89,18 @@ public class VentanaAgregarResenaORating extends JFrame implements ActionListene
 		if(path != null) {
 			float rating =-0.5f;
 			while(rating<0 || rating>5) {
-				rating =  Float.parseFloat(JOptionPane.showInputDialog("Ingrese un rating para la actividad seleccionada entre 0 y 5: "));
-				if(rating<0 ||rating>5) {
-					JOptionPane.showMessageDialog(this, "El numero "+rating+" no esta dentro del rango esperado.");
+				try {
+					rating =  Float.parseFloat(JOptionPane.showInputDialog("Ingrese un rating para la actividad seleccionada entre 0 y 5: "));
+					if (rating<0 || rating>5) {
+						JOptionPane.showMessageDialog(this, "El numero "+rating+" no esta dentro del rango esperado.");
+					} else {
+						VentanaPrincipal.sistemaRegistro.guardarActividad(path);
+					}
+				} catch (NumberFormatException ex) {
+			        JOptionPane.showMessageDialog(null, "Por favor ingrese un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
-			path.agregarRating(rating);;
+			path.agregarRating(rating);
 			mostrarDetalles(path);
 		} else {
 			JOptionPane.showMessageDialog(this, "No hay ninguna actividad seleccionada.");
@@ -100,14 +110,13 @@ public class VentanaAgregarResenaORating extends JFrame implements ActionListene
         String detalles = "Nombre: " + path.getTitulo() + "\n" +
                           "Descripción: " + path.getDescripcion() + "\n" +
                           "Duración: " + path.getDuracionMinutos() +"\n"+
-                          "ID"+ path.getId()+"\n"+
-                          "Rating"+path.getRating()+"\n";
+                          "ID: "+ path.getId()+"\n"+
+                          "Rating: "+path.getRating()+"\n";
                           
         detallesArea.setText(detalles);
     }
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		String comando = e.getActionCommand();
 		Actividad selectedPath = listaPaths.getSelectedValue();
 		if(comando.equals(RESENA)) {
@@ -116,7 +125,6 @@ public class VentanaAgregarResenaORating extends JFrame implements ActionListene
 			try {
 				agregarRatingActividad(selectedPath);
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}

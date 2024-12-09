@@ -768,7 +768,6 @@ public class Consola {
 				String idActividadAClonar = pedirCadenaAlUsuario("Ingrese ID");
 				Actividad actividad = actividades.get(idActividadAClonar);
 				Actividad actividadClonada = profesorActual.clonarActividad(actividad);
-				sistemaRegistro.guardarActividad(actividad);
 				sistemaRegistro.guardarActividad(actividadClonada);
 				sistemaRegistro.guardarProfesor(profesorActual);
 				System.out.println("La actividad fue clonada exitosamente.");

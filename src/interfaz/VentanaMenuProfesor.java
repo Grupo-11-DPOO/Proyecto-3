@@ -27,7 +27,8 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private VentanaCrearLearningPath ventanaCrearLearningPath;
 	private VentanaVerYEditarLearningPath ventanaVerYEditarLearningPath;
 	private VentanaCrearActividad ventanaCrearActividad;
-	private VentanaAgregarResenaORating ventanaAgregar;
+	private VentanaClonar ventanaClonar;
+	private VentanaAgregarResenaORating ventanaAgregarRating;
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear actividad";
@@ -96,7 +97,7 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 		
         // Termina de configurar la ventana
         setTitle( "Menu Principal" );
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize( 800, 600 );
         setResizable(false);
         setLocationRelativeTo( null );
@@ -128,10 +129,17 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         }
 	}
 	
+	public void clonarActividad() {
+		if (ventanaClonar == null || !ventanaClonar.isVisible()) {
+			ventanaClonar = new VentanaClonar(profesorActual);
+			ventanaClonar.setVisible(true);
+		}
+	}
+	
 	public void agregarResenaORating() {
-		if (ventanaAgregar == null || !ventanaAgregar.isVisible()) {
-			ventanaAgregar = new VentanaAgregarResenaORating();
-			ventanaAgregar.setVisible(true);
+		if (ventanaAgregarRating == null || !ventanaAgregarRating.isVisible()) {
+			ventanaAgregarRating = new VentanaAgregarResenaORating();
+			ventanaAgregarRating.setVisible(true);
 		}
 	}
 	
@@ -151,12 +159,14 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
         	verYEditarLearningPath();
         } else if (comando.equals(CREAR_ACTIVIDAD)) {
         	crearActividad();
+        } else if (comando.equals(CLONAR)) {
+        	clonarActividad();
         } else if(comando.equals(AGREGAR)) {
         	agregarResenaORating();
         } else if(comando.equals(VERSTATS)) {
         	verEstadisticas();
         } else if (comando.equals(SALIR)) {
-        	this.dispose();
+        	System.exit(0);
         }
         //TODO terminar de configurar las otras ventanas
 	}

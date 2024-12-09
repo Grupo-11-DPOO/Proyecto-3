@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Collection;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,52 +17,46 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 import actividades.Actividad;
 import usuarios.Profesor;
 
 @SuppressWarnings("serial")
-public class VentanaAgregarPrerequisitos extends JFrame implements ActionListener {
+public class VentanaClonar extends JFrame implements ActionListener{
 
-	private Actividad actividad;
 	private Profesor profesorActual;
 	private JPanel panelActividades;
-	private JButton botonAgregar;
+	private JButton botonClonar;
 	private JButton botonCerrar;
 	private Collection<Actividad> listaActividades;
-	private static final String AGREGAR = "Agregar actividad con ID";
+	private static final String CLONAR = "Clonar actividad con ID";
 	private static final String CERRAR = "Cerrar";
 	
-	
-	public VentanaAgregarPrerequisitos (Actividad actividad, Profesor profesorActual) {
+	public VentanaClonar (Profesor profesorActual) {
 		
 		this.profesorActual = profesorActual;
 		this.listaActividades = VentanaPrincipal.actividades.values();
-		this.actividad = actividad;
-		
-		setLayout( new BorderLayout());
-		
-		String titulo = actividad.getTitulo();
-		JLabel labelTitulo = new JLabel("Agregar PreRequisitos a "+titulo);
+		JLabel labelTitulo = new JLabel("Clonar actividades para "+profesorActual.getLogin());
 		add(labelTitulo, BorderLayout.NORTH);
 		
 		// Panel central con la información de todas las actividades
 		add(mostrarPanelActividades(), BorderLayout.CENTER);
 		
 		JPanel panelBotones = new JPanel();
-		botonAgregar = new JButton(AGREGAR);
-		botonAgregar.addActionListener(this);
-		botonAgregar.setActionCommand(AGREGAR);
+		botonClonar = new JButton(CLONAR);
+		botonClonar.addActionListener(this);
+		botonClonar.setActionCommand(CLONAR);
 		botonCerrar = new JButton(CERRAR);
 		botonCerrar.addActionListener(this);
 		botonCerrar.setActionCommand(CERRAR);
-		panelBotones.add(botonAgregar);
+		panelBotones.add(botonClonar);
 		panelBotones.add(botonCerrar);
 		add(panelBotones, BorderLayout.SOUTH);
 		
         // Termina de configurar la ventana
-        setTitle( "Agregar prerequisitos a actividad" );
+        setTitle( "Clonar actividades" );
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
-        setSize( 600, 650 );
+        setSize( 580, 550 );
         setResizable(false);
         setLocationRelativeTo( null );
         setVisible( true );
@@ -119,28 +114,29 @@ public class VentanaAgregarPrerequisitos extends JFrame implements ActionListene
 		return panelActividades;
 	}
 	
-	public void agregarActividad() {
+	private void clonarActividad() throws Exception {
 		String idActividad = JOptionPane.showInputDialog("Ingrese el ID de la actividad a agregar:");
-		Actividad actividadAgregar = VentanaPrincipal.actividades.get(idActividad);
-		if (actividadAgregar != null) {
-			actividad.agregarPrerrequisito(actividadAgregar);
-			JOptionPane.showMessageDialog(this,"¡Prerequisito agregado correctamente!");
+		Actividad actividad = VentanaPrincipal.actividades.get(idActividad);
+		if (actividad != null) {
+			Actividad actividadClonada = profesorActual.clonarActividad(actividad);
+			VentanaPrincipal.sistemaRegistro.guardarActividad(actividadClonada);
+			VentanaPrincipal.sistemaRegistro.guardarProfesor(profesorActual);
 		} else {
-			JOptionPane.showMessageDialog(this,  "No existe una actividad con ese ID", "ID incorrecto", JOptionPane.ERROR_MESSAGE);			
+			JOptionPane.showMessageDialog(this,  "No existe una actividad con ese ID", "ID incorrecto", JOptionPane.ERROR_MESSAGE);	
 		}
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand( );
-        if( comando.equals( AGREGAR ) ) {
-        	agregarActividad();
+        if( comando.equals( CLONAR ) ) {
+        	try {
+				clonarActividad();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
         } else if (comando.equals(CERRAR)) {
-			profesorActual.guardarActividad(actividad);
-			VentanaPrincipal.sistemaRegistro.guardarActividad(actividad);
-			VentanaPrincipal.sistemaRegistro.guardarProfesor(profesorActual);
-			this.dispose();
-			JOptionPane.showMessageDialog(this,"¡Actividad creada exitosamente!");	
+        	this.dispose();
         }
 	}
 }

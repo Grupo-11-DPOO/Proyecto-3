@@ -242,8 +242,8 @@
     },
     {
         "descripcion": "aprender tecnicas de magia",
-        "rating": 0,
-        "cantidadRating": 0,
+        "rating": 3,
+        "cantidadRating": 4,
         "titulo": "DPOO p1",
         "obligatorio": true,
         "prerrequisitos": [],
@@ -251,7 +251,7 @@
         "tipoActividad": "Examen",
         "objetivo": "aprender",
         "respuestas": {},
-        "resenas": [],
+        "resenas": ["me gusta"],
         "duracionMinutos": 90,
         "preguntas": [
             "Programe la nasa",
@@ -259,6 +259,27 @@
             "mejor equipo del futbol colombiano"
         ],
         "id": "a09b01f7-719c-4078-b509-561ec4b001fc",
+        "nivel": "Intermedio"
+    },
+    {
+        "descripcion": "aprender tecnicas de magia",
+        "rating": 3,
+        "cantidadRating": 4,
+        "titulo": "DPOO p1",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 19:54:23 COT 2024",
+        "tipoActividad": "Examen",
+        "objetivo": "aprender",
+        "respuestas": {},
+        "resenas": ["me gusta"],
+        "duracionMinutos": 90,
+        "preguntas": [
+            "Programe la nasa",
+            "haga el uml de la universidad",
+            "mejor equipo del futbol colombiano"
+        ],
+        "id": "5108771a-eba2-406b-914b-a2ddcc939561",
         "nivel": "Intermedio"
     }
 ]
