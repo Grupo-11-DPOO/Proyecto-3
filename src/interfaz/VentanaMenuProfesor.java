@@ -10,9 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import usuarios.Profesor;
-import usuarios.Usuario;
 
 @SuppressWarnings("serial")
 public class VentanaMenuProfesor extends JFrame implements ActionListener{
@@ -33,7 +31,6 @@ public class VentanaMenuProfesor extends JFrame implements ActionListener{
 	private static final String CREAR = "Crear Learning Path";
 	private static final String VERYDITAR = "Ver y Editar Learning Path";
 	private static final String CREAR_ACTIVIDAD = "Crear actividad";
-
 	private static final String VERYEDITARACTI = "Ver y Editar Actividades";
 	private static final String CLONAR = "Clonar una Actividad";
 	private static final String AGREGAR = "Agregar reseñas y/o rating a actividad";

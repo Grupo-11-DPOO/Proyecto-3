@@ -187,5 +187,78 @@
         ],
         "id": "e09a93ed-ef1b-4ac4-bbbb-310e723320b0",
         "nivel": "Bajo"
+    },
+    {
+        "descripcion": "rwerwerw",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "prueba examen",
+        "obligatorio": true,
+        "prerrequisitos": [{
+            "descripcion": "gsegseg",
+            "rating": 0,
+            "cantidadRating": 0,
+            "titulo": "Recurso prueba GUi",
+            "obligatorio": true,
+            "prerrequisitos": [],
+            "tiempoLimite": "Sun Dec 08 14:10:51 COT 2024",
+            "tipoActividad": "Recurso",
+            "objetivo": "egswge",
+            "material": "link.com",
+            "resenas": [],
+            "duracionMinutos": 4,
+            "id": "8cbe1190-69ad-40f2-b39a-c99f32a06916",
+            "nivel": "Bajo"
+        }],
+        "tiempoLimite": "Sun Dec 08 19:41:48 COT 2024",
+        "tipoActividad": "Examen",
+        "objetivo": "r3rw3rr",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 60,
+        "preguntas": [
+            "Describa en maximo 2000 palabras las relaciones del derecho penal.",
+            "Resuelva la gravedad"
+        ],
+        "id": "0ba4e0c1-89d2-4795-ad0f-57c36e50e241",
+        "nivel": "Avanzado"
+    },
+    {
+        "descripcion": "rere",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "prueba encuesta",
+        "obligatorio": false,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 19:52:52 COT 2024",
+        "tipoActividad": "Encuesta",
+        "objetivo": "rre",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 6,
+        "preguntas": ["Se siente satisfecho con el semestre?"],
+        "id": "4b72e005-7e81-4892-bf5f-f1532827b100",
+        "nivel": "Intermedio"
+    },
+    {
+        "descripcion": "aprender tecnicas de magia",
+        "rating": 0,
+        "cantidadRating": 0,
+        "titulo": "DPOO p1",
+        "obligatorio": true,
+        "prerrequisitos": [],
+        "tiempoLimite": "Sun Dec 08 19:54:23 COT 2024",
+        "tipoActividad": "Examen",
+        "objetivo": "aprender",
+        "respuestas": {},
+        "resenas": [],
+        "duracionMinutos": 90,
+        "preguntas": [
+            "Programe la nasa",
+            "haga el uml de la universidad",
+            "mejor equipo del futbol colombiano"
+        ],
+        "id": "a09b01f7-719c-4078-b509-561ec4b001fc",
+        "nivel": "Intermedio"
     }
 ]
