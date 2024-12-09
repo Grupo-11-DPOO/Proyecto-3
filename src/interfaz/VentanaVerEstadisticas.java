@@ -69,8 +69,8 @@ public class VentanaVerEstadisticas extends JFrame implements ActionListener {
 	}
 	
 	public void mostrarLP() {
-		JOptionPane.showMessageDialog(this,"La ventana de ver Estadisticas no esta funcionando en estos momentos...\n"
-				+ " espera a nuestras proximas actualizaciones para disfrutar de esta función.");
+		VentanaMostrarLPStats ventana = new VentanaMostrarLPStats();
+		ventana.setVisible(true);
 	}
 
 	@Override
