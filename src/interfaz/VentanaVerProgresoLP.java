@@ -81,8 +81,7 @@ public class VentanaVerProgresoLP extends JFrame implements ActionListener{
 			detalles = "No hay ningún learning path en curso,"+"\n"+ "por lo que esta funcionalidad no sirve";
 			datos.setText(detalles);
 		}else{
-			detalles = "El porcentaje de actividades completadas es: "+ porcentajeCompletadas+"%\n"
-					+ "El porcentaje de actividades exitosas es: "+ porcentajeExitosas+"%";
+			detalles = "El porcentaje de actividades completadas y/o exitosas es: "+ porcentajeCompletadas+"%\n";
 			datos.setText(detalles);
 		}
 	}
