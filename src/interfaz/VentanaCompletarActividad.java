@@ -20,6 +20,10 @@ import actividades.Actividad;
 import actividades.Encuesta;
 import actividades.Estado;
 import actividades.Examen;
+import actividades.Quiz;
+import actividades.QuizVerdad;
+import actividades.Recurso;
+import actividades.Tarea;
 import actividades.TipoActividades;
 import usuarios.Estudiante;
 
@@ -82,7 +86,39 @@ public class VentanaCompletarActividad extends JFrame {
 					
 					
 				}
-			}
+				else if (tipoAct == TipoActividades.Quiz) {
+		            Quiz quiz = (Quiz) actividad;
+		            Estado estado = quiz.guardarRespuestas(estudiante);
+		            estudiante.getRegistroActividades().put(actividad.getId(), estado);
+		            labelCalificacion.setText("Estado de la Actividad: " + estado.name());
+		            VentanaPrincipal.sistemaRegistro.guardarActividad(quiz);
+		            VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+		        }
+				 else if (tipoAct == TipoActividades.QuizVerdad) {
+		                QuizVerdad quizVF = (QuizVerdad) actividad;
+		                Estado estado = quizVF.guardarRespuestas(estudiante);
+		                labelCalificacion.setText("Estado de la Actividad: " + estado.name());
+		                VentanaPrincipal.sistemaRegistro.guardarActividad(quizVF);
+		                VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+		            }
+				 else if (tipoAct == TipoActividades.Recurso) {
+                Recurso recurso = (Recurso) actividad;
+                labelCalificacion.setText("Estado de la Actividad: Exitosa" );
+                estudiante.getRegistroActividades().put(actividad.getId(), Estado.EXITOSA);
+                VentanaPrincipal.sistemaRegistro.guardarActividad(recurso);
+                VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+            }
+				 else if (tipoAct == TipoActividades.Tarea) {
+		                Tarea tarea = (Tarea) actividad;
+		                tarea.guardarRespuestas(estudiante);
+		                labelCalificacion.setText("Estado de la Actividad: ENVIADA" );
+		                estudiante.getRegistroActividades().put(actividad.getId(), Estado.ENVIADA);
+		                VentanaPrincipal.sistemaRegistro.guardarActividad(tarea);
+		                VentanaPrincipal.sistemaRegistro.guardarEstudiante(estudiante);
+		            }
+				
+		        }
+			
         	
         });
         panelBotones.add(botonEnviar);
@@ -98,6 +134,7 @@ public class VentanaCompletarActividad extends JFrame {
         	mostrarMensajeActividadNoSeleccionada();
         }
         else {
+        	
         	mostrarInfo(actividad);
         	TipoActividades tipoAct = actividad.getTipoActividad();
         	
@@ -110,7 +147,23 @@ public class VentanaCompletarActividad extends JFrame {
         		Encuesta encuesta = (Encuesta) actividad;
         		panelContenido.add(encuesta.getContenido());
         	}
+        	if( tipoAct == TipoActividades.Quiz) {
+        		
+        		Quiz quiz = (Quiz) actividad;
+        		panelContenido.add(quiz.getContenido());
+        	
+        	
         }
+        	if (tipoAct == TipoActividades.QuizVerdad) {
+                QuizVerdad quizVF = (QuizVerdad) actividad;
+                panelContenido.add(quizVF.getContenido());
+            }
+        	if (tipoAct == TipoActividades.Tarea) {
+                Tarea tarea = (Tarea) actividad;
+                panelContenido.add(tarea.getContenido());
+            }
+        }
+        
         
 	}
 	

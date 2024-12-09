@@ -1,5 +1,11 @@
 package actividades;
 
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import usuarios.Estudiante;
 
 public class Recurso extends Actividad{
 
@@ -26,7 +32,22 @@ public class Recurso extends Actividad{
 		Estado estado = Estado.EXITOSA;
 		return estado;
 	}
-	
+    public JPanel getContenido() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+        JTextArea areaRecurso = new JTextArea(this.material);
+        areaRecurso.setEditable(false);
+        areaRecurso.setWrapStyleWord(true);
+        areaRecurso.setLineWrap(true);
+
+        JScrollPane scrollPane = new JScrollPane(areaRecurso);
+        scrollPane.setPreferredSize(new java.awt.Dimension(500, 300));
+
+        panel.add(scrollPane);
+
+        return panel;
+    }
 	@Override
 	public Recurso clone() {
 		Recurso copia = (Recurso) super.clone();
